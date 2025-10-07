@@ -639,4 +639,294 @@
 
     <script src="assets/js/main.js" defer></script>
   </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BBQ Blog is your home for fire-kissed recipes, gear reviews, and pitmaster stories." />
+  <title>BBQ Blog | Fire-Kissed Stories & Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-grid">
+      <a class="logo" href="#top" aria-label="BBQ Blog home">
+        <span aria-hidden="true">🔥</span>
+        <span>BBQ Blog</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#features">Why Smoke With Us</a></li>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#stories">Pitmaster Stories</a></li>
+          <li><a href="#gear">Gear Bench</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1 id="hero-heading">BBQ Blog: Feed the Fire</h1>
+          <p>
+            Discover smoke-ring secrets, slow-and-low recipes, and pitmaster wisdom to elevate your backyard cookouts.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#recipes">Explore Recipes</a>
+            <a class="btn btn--ghost" href="#newsletter">Join the Crew</a>
+          </div>
+        </div>
+        <div class="hero__card" aria-label="Featured recipe">
+          <div class="hero__badge">Featured Cook</div>
+          <h2>Texas Brisket, 14 Hours of Perfection</h2>
+          <p class="hero__meta">By Pitmaster Lila Stone • 235 comments</p>
+          <p>Take a tour through bark development, fat rendering, and wood selection for the juiciest slice.</p>
+          <a class="hero__link" href="#stories">Read the story →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <div class="container section-heading">
+        <p class="eyebrow">Why Smoke With Us</p>
+        <h2 id="features-heading">We blend tradition with experimentation</h2>
+        <p class="section-subtitle">
+          From regional classics to plant-powered plates, our team chases flavor with curiosity and respect for the flame.
+        </p>
+      </div>
+      <div class="container feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🥩</div>
+          <h3>Recipes Tested in Real Pits</h3>
+          <p>
+            Every recipe is dialed-in on offset smokers, kettles, and pellet grills—complete with timing, temps, and wood pairings.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🪵</div>
+          <h3>Fuel Knowledge</h3>
+          <p>
+            Charcoal, hardwood, or hybrid? We profile fuel types, smoke flavor profiles, and sustainable sourcing tips.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🕰️</div>
+          <h3>Time-Saving Techniques</h3>
+          <p>
+            Learn cold-smoking, reverse searing, and make-ahead rubs that keep you social while the smoker works.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="recipes" id="recipes" aria-labelledby="recipes-heading">
+      <div class="container section-heading">
+        <p class="eyebrow">Recipes</p>
+        <h2 id="recipes-heading">Fresh off the smoker</h2>
+        <p class="section-subtitle">Tap a tag to filter the spread.</p>
+      </div>
+      <div class="container recipes__filters" role="group" aria-label="Recipe filters">
+        <button class="filter-button is-active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="beef">Beef</button>
+        <button class="filter-button" data-filter="poultry">Poultry</button>
+        <button class="filter-button" data-filter="veg">Vegetarian</button>
+        <button class="filter-button" data-filter="sides">Sides</button>
+      </div>
+      <div class="container recipes-grid">
+        <article class="recipe-card" data-category="beef">
+          <div class="recipe-card__image" role="img" aria-label="Sliced smoked brisket"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Beef</p>
+            <h3>Midnight Brisket with Coffee Rub</h3>
+            <p>Layer espresso, ancho chili, and brown sugar for a midnight bark worth bragging about.</p>
+            <a class="recipe-card__link" href="#">Get the cook plan</a>
+          </div>
+        </article>
+        <article class="recipe-card" data-category="poultry">
+          <div class="recipe-card__image recipe-card__image--wings" role="img" aria-label="Smoked chicken wings"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Poultry</p>
+            <h3>Maple Thunder Chicken Wings</h3>
+            <p>Sweet, sticky, and a hit of habanero thunder—these wings vanish at every tailgate.</p>
+            <a class="recipe-card__link" href="#">Smokers unite</a>
+          </div>
+        </article>
+        <article class="recipe-card" data-category="veg">
+          <div class="recipe-card__image recipe-card__image--cauliflower" role="img"
+            aria-label="Smoked cauliflower steaks"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Vegetarian</p>
+            <h3>Charred Cauliflower with Harissa Butter</h3>
+            <p>Proof that veggies crave smoke too—finished with a citrusy herb salad.</p>
+            <a class="recipe-card__link" href="#">Fire up the veg</a>
+          </div>
+        </article>
+        <article class="recipe-card" data-category="sides">
+          <div class="recipe-card__image recipe-card__image--corn" role="img" aria-label="Grilled elote"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Sides</p>
+            <h3>Smoked Street Corn Pudding</h3>
+            <p>All the bold elote flavors baked into a creamy side that steals the spotlight.</p>
+            <a class="recipe-card__link" href="#">Side dish hero</a>
+          </div>
+        </article>
+        <article class="recipe-card" data-category="beef">
+          <div class="recipe-card__image recipe-card__image--ribs" role="img" aria-label="Rack of ribs"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Beef</p>
+            <h3>Cherry Coke Glazed Dino Ribs</h3>
+            <p>Low and slow ribs lacquered in a cherry cola glaze with peppery heat.</p>
+            <a class="recipe-card__link" href="#">See the glaze</a>
+          </div>
+        </article>
+        <article class="recipe-card" data-category="veg">
+          <div class="recipe-card__image recipe-card__image--mushroom" role="img"
+            aria-label="Stuffed portobello mushrooms"></div>
+          <div class="recipe-card__content">
+            <p class="recipe-card__tag">Vegetarian</p>
+            <h3>Smoked Portobello Burnt Ends</h3>
+            <p>Chewy, caramelized mushrooms finished with bourbon BBQ sauce and pickled onion.</p>
+            <a class="recipe-card__link" href="#">Make it meatless</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="stories" id="stories" aria-labelledby="stories-heading">
+      <div class="container section-heading">
+        <p class="eyebrow">Pitmaster Stories</p>
+        <h2 id="stories-heading">Meet the legends of the smoke trail</h2>
+      </div>
+      <div class="container stories-grid">
+        <article class="story-card">
+          <h3>The Science of Smoke with Dr. Maya Ellis</h3>
+          <p>Food scientist Maya Ellis breaks down the chemistry of bark, managing stalls, and the role of humidity.</p>
+          <a class="story-card__link" href="#">Listen to the episode</a>
+        </article>
+        <article class="story-card">
+          <h3>Road Trip: Carolinas Whole Hog Revival</h3>
+          <p>We visit three heritage pit stops preserving vinegar mop traditions and whole hog over coals.</p>
+          <a class="story-card__link" href="#">Read the travelogue</a>
+        </article>
+        <article class="story-card">
+          <h3>Plant-Based Smoke with Chef Dani Ortiz</h3>
+          <p>Chef Dani shares how she transforms jackfruit, tofu, and veggies with live-fire flair.</p>
+          <a class="story-card__link" href="#">Get inspired</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="gear" id="gear" aria-labelledby="gear-heading">
+      <div class="container section-heading">
+        <p class="eyebrow">Gear Bench</p>
+        <h2 id="gear-heading">Tools we trust by the fire</h2>
+        <p class="section-subtitle">
+          We test gadgets, thermometers, and pits under real cook conditions so you know what earns a spot on your patio.
+        </p>
+      </div>
+      <div class="container gear-grid">
+        <article class="gear-card">
+          <div class="gear-card__header">
+            <h3>SmokeSense Pro Thermometer</h3>
+            <span class="gear-card__rating" aria-label="Rated 4.8 out of 5">4.8</span>
+          </div>
+          <p>Dual-probe accuracy within 0.7°F and a magnetic base that sticks to your pit like a champ.</p>
+          <ul class="gear-card__highlights">
+            <li>Instant alerts via Bluetooth</li>
+            <li>Backlit display for night cooks</li>
+            <li>Includes color-coded probe wraps</li>
+          </ul>
+        </article>
+        <article class="gear-card">
+          <div class="gear-card__header">
+            <h3>Ironwood Offset 720</h3>
+            <span class="gear-card__rating" aria-label="Rated 4.6 out of 5">4.6</span>
+          </div>
+          <p>A backyard-sized offset smoker built with quarter-inch steel for serious heat retention.</p>
+          <ul class="gear-card__highlights">
+            <li>Oversized firebox with clean-out drawer</li>
+            <li>Comes with tuning plates</li>
+            <li>Lifetime weld guarantee</li>
+          </ul>
+        </article>
+        <article class="gear-card">
+          <div class="gear-card__header">
+            <h3>SmokeCraft Spice Mill</h3>
+            <span class="gear-card__rating" aria-label="Rated 4.9 out of 5">4.9</span>
+          </div>
+          <p>Crank out fresh rub blends with this hand-mill featuring adjustable grind settings and a walnut body.</p>
+          <ul class="gear-card__highlights">
+            <li>Perfect for pepper-heavy rubs</li>
+            <li>Removable canister for easy refills</li>
+            <li>Non-slip silicone base</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-heading">
+      <div class="container newsletter__inner">
+        <div class="newsletter__text">
+          <p class="eyebrow">Join the crew</p>
+          <h2 id="newsletter-heading">Sign up for the Pit List</h2>
+          <p>Weekly recipes, gear picks, and stories that help you smoke with confidence.</p>
+        </div>
+        <form class="newsletter__form" action="#" method="post">
+          <label class="sr-only" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" type="email" name="email" placeholder="you@email.com" required />
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+          <p class="newsletter__privacy">No spam, just sizzling updates. Unsubscribe anytime.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <a class="logo" href="#top">
+          <span aria-hidden="true">🔥</span>
+          <span>BBQ Blog</span>
+        </a>
+        <p class="site-footer__text">Celebrating smoke, fire, and community—one cook at a time.</p>
+      </div>
+      <div>
+        <p class="site-footer__heading">Follow the smoke</p>
+        <ul class="site-footer__links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Spotify</a></li>
+          <li><a href="#">Newsletter archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__heading">Quick links</p>
+        <ul class="site-footer__links">
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="#stories">Stories</a></li>
+          <li><a href="#gear">Gear Bench</a></li>
+          <li><a href="#newsletter">Join the crew</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__bottom">© <span id="current-year"></span> BBQ Blog. Crafted with smoke & heart.</p>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+
 </html>

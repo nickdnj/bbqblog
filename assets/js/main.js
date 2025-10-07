@@ -8,6 +8,12 @@
 
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const recipes = document.querySelectorAll('.recipe-card');
+  const year = document.getElementById('current-year');
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
   if (navToggle && nav) {
@@ -33,12 +39,15 @@
     filterButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const filter = button.dataset.seasonFilter;
+        const filter = button.dataset.filter;
 
         filterButtons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
 
         recipes.forEach((recipe) => {
           const season = recipe.dataset.season;
           const shouldShow = filter === 'all' || season === filter;
+          const category = recipe.dataset.category;
+          const shouldShow = filter === 'all' || category === filter;
           recipe.style.display = shouldShow ? 'flex' : 'none';
           recipe.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
         });
