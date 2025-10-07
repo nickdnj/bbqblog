@@ -2,6 +2,17 @@
 
 A modern, single-page BBQ storytelling and recipe hub. The site includes featured cooks, interactive recipe filtering, gear reviews, and a newsletter signup section—all wrapped in a bold, fire-inspired visual design.
 
+## Wharfside Manor Picnic Area Website Blueprint
+
+The repository now includes a comprehensive specification for a community-facing picnic and grilling website tailored to Wharfside Manor in Monmouth Beach, NJ. The document captures:
+
+- Site information architecture and content governance.
+- Seasonal recipe frameworks (spring through fall) with multimedia requirements.
+- Detailed how-to guide lineup, video storyboards, and production standards.
+- HOA-aligned rules, legal disclaimers, and downloadable resource checklist.
+
+You can find the full blueprint in [`docs/wharfside-picnic-site-spec.md`](docs/wharfside-picnic-site-spec.md).
+
 ## Running locally
 
 Just open `index.html` in your browser. All assets are static and self-contained.
