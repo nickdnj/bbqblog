@@ -27,6 +27,8 @@ docs/wharfside-picnic-site-spec.md  # Full content & UX specification for future
 
 ## Working locally
 
+Download or clone the entire repository (the `assets/` folder contains the CSS and JavaScript referenced by `index.html`).
+
 Open `index.html` in your browser or serve the folder with a lightweight static server for live reloading:
 
 ```bash
@@ -40,6 +42,18 @@ Then explore the site to verify:
 1. The mobile navigation toggle opens/closes and updates `aria-expanded` correctly.
 2. Seasonal filter buttons hide/show recipe cards and maintain focus state.
 3. Forms validate required fields, and the footer year updates automatically.
+
+### Troubleshooting missing styles/scripts
+
+- If the page loads without styling, confirm you have the full folder structure:
+  ```
+  bbqblog/
+    index.html
+    assets/css/style.css
+    assets/js/main.js
+  ```
+- When serving locally, start your server from the project root (`bbqblog/`) and visit `http://localhost:8000/index.html`.
+- If you need a portable snapshot, run `git archive --format=zip HEAD -o wharfside-picnic-guide.zip` to generate a ZIP that includes all assets.
 
 ## Customizing content
 
