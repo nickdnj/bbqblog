@@ -1,0 +1,26 @@
+# Wharfside Picnic Guide — Mini PC deployment
+# Deploy: docker compose -f docker-compose.minipc.yml up -d --build
+# Public via the shared Cloudflare Tunnel: picnic.vistter.com -> host.docker.internal:8120
+# LAN/admin fallback (Tailscale): http://100.108.181.24:8120
+services:
+  picnic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: picnic
+    restart: unless-stopped
+    ports:
+      - "8120:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - picnic-net
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+          cpus: "0.25"
+
+networks:
+  picnic-net:
+    driver: bridge

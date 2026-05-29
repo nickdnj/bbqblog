@@ -1,0 +1,10 @@
+.git
+.gitignore
+node_modules
+.review
+.tmp
+DEPLOY.md
+README.md
+docker-compose*.yml
+Dockerfile
+scripts
