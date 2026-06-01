@@ -1,10 +1,18 @@
 .git
 .gitignore
-node_modules
 .review
 .tmp
+**/node_modules
+**/dist
+server/data
+**/*.log
 DEPLOY.md
 README.md
 docker-compose*.yml
 Dockerfile
 scripts
+# legacy static-site files (superseded by client/ + server/)
+index.html
+nginx.conf
+assets
+docs

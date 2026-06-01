@@ -1,5 +1,5 @@
-# Wharfside Picnic Guide — Mini PC deployment
-# Deploy: docker compose -f docker-compose.minipc.yml up -d --build
+# Wharfside Picnic Guide — full-stack PWA, Mini PC deployment
+# Deploy: docker compose -f docker-compose.minipc.yml --env-file .env up -d --build
 # Public via the shared Cloudflare Tunnel: picnic.vistter.com -> host.docker.internal:8120
 # LAN/admin fallback (Tailscale): http://100.108.181.24:8120
 services:
@@ -10,7 +10,17 @@ services:
     container_name: picnic
     restart: unless-stopped
     ports:
-      - "8120:80"
+      - "8120:8120"
+    environment:
+      - PORT=8120
+      - DB_PATH=/data/picnic.db
+      # Set these in .env on the mini PC (NEVER commit real values):
+      - JWT_SECRET=${PICNIC_JWT_SECRET:?set PICNIC_JWT_SECRET in .env}
+      - ADMIN_EMAIL=${PICNIC_ADMIN_EMAIL:-admin@wharfsidemb.com}
+      - ADMIN_PASSWORD=${PICNIC_ADMIN_PASSWORD:?set PICNIC_ADMIN_PASSWORD in .env}
+      - ADMIN_NAME=${PICNIC_ADMIN_NAME:-Wharfside Board}
+    volumes:
+      - picnic_data:/data
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
@@ -18,8 +28,11 @@ services:
     deploy:
       resources:
         limits:
-          memory: 64M
-          cpus: "0.25"
+          memory: 256M
+          cpus: "0.5"
+
+volumes:
+  picnic_data:
 
 networks:
   picnic-net:

@@ -1,34 +1,38 @@
 # Deploying the Wharfside Picnic Guide
 
-This site follows the **Wharfside house pattern** (same as TagSmart and SignBoard):
-a Docker container on the Beelink mini PC, published to a `*.vistter.com` subdomain
-through the **shared Cloudflare Tunnel** that lives in VistterStream's compose.
+A full-stack **PWA + blog**: a React/Vite front end and an Express + SQLite API,
+served by one Node process in one Docker container — the **Wharfside house pattern**
+(same as TagSmart/SignBoard), published to `picnic.vistter.com` through the shared
+Cloudflare Tunnel.
 
 | | Value |
 |---|---|
 | Public URL | `https://picnic.vistter.com` |
-| Container | `picnic` (nginx:alpine, static) |
-| Host port | `8120` → container `80` |
-| Tunnel route | `picnic.vistter.com` → `http://host.docker.internal:8120` |
-| LAN/admin fallback | `http://100.108.181.24:8120` (Tailscale) |
-| Mini PC | `nickd@100.108.181.24` (Tailscale; LAN IP unreachable from dev machine) |
+| Admin | `https://picnic.vistter.com/admin` |
+| Container | `picnic` (Node 22, serves built PWA + `/api`) |
+| Port | `8120` (host) → `8120` (container) |
+| Tunnel route | `picnic.vistter.com` → `host.docker.internal:8120` (already configured) |
+| Data | SQLite at `/data/picnic.db` in the `picnic_data` volume |
+| Mini PC | `nickd@100.108.181.24` (Tailscale) |
 
-## One-time setup (needs Nick + Cloudflare access)
+## One-time: secrets on the mini PC
 
-These steps publish the subdomain. They mirror how `tagsmart.vistter.com` and
-`signboard.vistter.com` were added (ingress managed in the Cloudflare dashboard /
-API against the existing `vistterstream` tunnel — token-based auth).
+Create `~/bbqblog/.env` on the mini PC (git-ignored, never committed):
 
-1. **Add the tunnel ingress route** (Cloudflare Zero Trust → Networks → Tunnels →
-   `vistterstream` tunnel → Public Hostnames → *Add*):
-   - Subdomain `picnic`, domain `vistter.com`
-   - Service: `HTTP` → `host.docker.internal:8120`
-2. **DNS** — adding the public hostname above auto-creates the proxied CNAME
-   `picnic.vistter.com` → `<tunnel-UUID>.cfargotunnel.com`. Verify it exists.
-3. No `config.yml` edit is required — this tunnel is token-based and routes from the
-   dashboard (the repo `config.yml` only documents the original `stream.vistter.com` rules).
+```ini
+PICNIC_JWT_SECRET=<run: openssl rand -hex 32>
+PICNIC_ADMIN_EMAIL=admin@wharfsidemb.com
+PICNIC_ADMIN_PASSWORD=<a strong password — also save it in Apple Passwords>
+PICNIC_ADMIN_NAME=Wharfside Board
+```
 
-## Deploy (repeatable)
+- `PICNIC_ADMIN_PASSWORD` seeds the first board login **on an empty database only**.
+  Pick it deliberately and store it in Apple Passwords.
+- The tunnel route already points at port 8120 (unchanged from the old static site),
+  so **no Cloudflare change is needed** to go live — deploying the new container on
+  8120 swaps the site over.
+
+## Deploy / redeploy
 
 From this repo on the dev machine:
 
@@ -36,25 +40,28 @@ From this repo on the dev machine:
 ./scripts/deploy-minipc.sh
 ```
 
-That `rsync`s the site to `~/bbqblog` on the mini PC and runs
-`docker compose -f docker-compose.minipc.yml up -d --build`.
-
-Manual equivalent:
-
-```bash
-rsync -az --exclude='.git' --exclude='node_modules' ./ nickd@100.108.181.24:~/bbqblog/
-ssh nickd@100.108.181.24 'cd ~/bbqblog && docker compose -f docker-compose.minipc.yml up -d --build'
-```
+It rsyncs the source to `~/bbqblog`, then on the box runs
+`docker compose -f docker-compose.minipc.yml --env-file .env up -d --build`
+(the image builds the PWA and the server in multi-stage; nothing is built on the dev machine).
 
 ## Verify
 
 ```bash
-curl -fsS http://100.108.181.24:8120/healthz     # -> ok   (LAN, via Tailscale)
-curl -fsSI https://picnic.vistter.com            # -> 200  (public, once tunnel route is live)
+curl -fsS http://100.108.181.24:8120/healthz        # -> ok   (LAN, via Tailscale)
+curl -fsS http://100.108.181.24:8120/api/posts      # -> []   (empty until the board posts)
+curl -fsSI https://picnic.vistter.com               # -> 200  (public)
 ```
 
+Then sign in at `https://picnic.vistter.com/admin` and publish the first post.
+
+## Publishing Bob's videos
+The Bob's Grill School episodes live in `client/src/data/content.ts` (`episodes[]`).
+Paste a YouTube video ID into the matching episode's `youtubeId` and redeploy — the
+"coming soon" card becomes a click-to-load embed. (No backend change.)
+
 ## Notes
-- It's a static site — nginx serves `index.html` + `assets/` + `docs/`. No DB, no secrets.
-- Container is capped at 64 MB / 0.25 CPU; it sits next to VistterStream/TagSmart/SignBoard.
-- Cloudflare blocks default bot/Python user-agents (error 1010); not relevant for browser traffic,
-  but any future provisioning script must send a custom `User-Agent` (see SignBoard scripts).
+- Rollback: the previous static container image is still in Docker on the box; if needed,
+  re-deploy the `main` branch (static nginx) which also binds 8120.
+- Changing the admin password later needs a DB update (no self-serve "change password" yet)
+  — a future enhancement alongside multi-user / approval workflow.
+- Cloudflare blocks default bot/Python user-agents (error 1010); not relevant to browsers.
