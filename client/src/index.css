@@ -18,30 +18,33 @@
   --shadow-card: 0 14px 30px rgba(18, 60, 91, 0.12);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-body);
-  color: var(--color-ink);
-  background: var(--color-foam);
-  line-height: 1.6;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  color: var(--color-navy-dark);
-  line-height: 1.2;
-}
-
-/* Honor reduced-motion */
-@media (prefers-reduced-motion: reduce) {
+/* Base element defaults live in @layer base so Tailwind utility classes
+   (e.g. text-white on a dark section) always win the cascade. */
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background: var(--color-foam);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy-dark);
+    line-height: 1.2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
