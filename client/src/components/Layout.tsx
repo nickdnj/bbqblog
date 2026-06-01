@@ -8,6 +8,7 @@ const navLinks = [
   { to: '/school', label: "Bob's School" },
   { to: '/rules', label: 'Rules' },
   { to: '/recipes', label: 'Recipes' },
+  { to: '/tools', label: 'Tools' },
   { to: '/blog', label: 'Blog' },
   { to: '/reserve', label: 'Reserve' },
 ]

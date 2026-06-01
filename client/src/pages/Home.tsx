@@ -8,7 +8,8 @@ const highlights = [
   { to: '/grills', emoji: '🛠️', title: 'Our Grills', text: 'Meet the Kay Park SF163.5 — the commercial park grills in our grove.' },
   { to: '/school', emoji: '🎬', title: "Bob's School", text: 'Short how-to videos shot right here at the grove.' },
   { to: '/rules', emoji: '📋', title: 'Rules', text: 'Picnic, grill, fire-safety, and cleanup rules everyone follows.' },
-  { to: '/recipes', emoji: '🌽', title: 'Recipes', text: 'Seasonal menus built for Jersey Shore spring, summer, and fall.' },
+  { to: '/recipes', emoji: '🌽', title: 'Recipes', text: 'Real grill recipes — mains, Jersey local catch, sides & sweets.' },
+  { to: '/tools', emoji: '🧰', title: 'Tools', text: 'What to bring: chimney starter, cast iron, and the rest of the gear.' },
   { to: '/reserve', emoji: '📅', title: 'Reserve a Grill', text: 'Planning a bigger gathering? Request a grill slot.' },
 ]
 

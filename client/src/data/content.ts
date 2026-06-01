@@ -140,7 +140,7 @@ export const rules: RuleCard[] = [
   },
 ]
 
-export const RECIPE_CATEGORIES = ['Mains', 'Seafood', 'Sides'] as const
+export const RECIPE_CATEGORIES = ['Mains', 'Seafood', 'Local Catch', 'Sides', 'Sweets'] as const
 export type RecipeCategory = (typeof RECIPE_CATEGORIES)[number]
 
 export type IngredientGroup = { group?: string; items: string[] }
@@ -152,6 +152,7 @@ export type Recipe = {
   tagline: string
   summary: string
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
+  tools?: string[]
   prepTime: string
   cookTime: string
   serves: string
@@ -170,6 +171,7 @@ export type Recipe = {
 export const recipes: Recipe[] = [
   {
     slug: 'grilled-pork-chops',
+    tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer', 'Cast-iron pan or foil tray'],
     title: 'Grilled Pork Chops with Farro & Charred Greens',
     category: 'Mains',
     tagline: 'Juicy chops + lemony farro salad',
@@ -218,6 +220,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'grilled-salmon',
+    tools: ['Chimney starter', 'Fish spatula', 'Heavy-duty foil', 'Instant-read thermometer'],
     title: 'Grilled Salmon with Lemon-Dill Drizzle',
     category: 'Seafood',
     tagline: 'Flaky salmon, bright lemon & dill',
@@ -256,6 +259,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'best-ribs',
+    tools: ['Chimney starter', 'Long tongs', 'Spray bottle', 'Extra charcoal', 'Wood chunks (optional)'],
     title: '"Best Ribs in the Universe" — Charcoal Grove Edition',
     category: 'Mains',
     tagline: 'Low-and-slow, fall-off-the-bone',
@@ -307,6 +311,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'strip-steak-miso-butter',
+    tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer'],
     title: 'Strip Steak with Smoky Miso Butter',
     category: 'Mains',
     tagline: 'Steakhouse sear + umami butter',
@@ -348,6 +353,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'yellowfin-tuna-ponzu',
+    tools: ['Chimney starter', 'Fish spatula', 'Cast-iron pan or grill-top wok', 'Instant-read thermometer'],
     title: 'Grilled Yellowfin Tuna with Ponzu',
     category: 'Seafood',
     tagline: 'Hard-seared, rare center, citrus ponzu',
@@ -408,6 +414,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'crab-cakes',
+    tools: ['Cast-iron skillet or griddle', 'Spatula', 'Chimney starter'],
     title: "Mrs. Duvall's Crab Cakes",
     category: 'Seafood',
     tagline: 'Light, crackery, all about the crab',
@@ -450,6 +457,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'herb-crusted-cod',
+    tools: ['Heavy-duty foil', 'Long tongs', 'Instant-read thermometer'],
     title: 'Herb-Crusted Grilled Cod (Foil Packet)',
     category: 'Seafood',
     tagline: 'Lemony herb crust, fuss-free foil',
@@ -491,6 +499,7 @@ export const recipes: Recipe[] = [
   },
   {
     slug: 'farro-corn-salad',
+    tools: ['Chimney starter', 'Long tongs', 'Sharp knife'],
     title: 'Farro Salad with Grilled Corn',
     category: 'Sides',
     tagline: 'Make-ahead crowd side',
@@ -526,6 +535,600 @@ export const recipes: Recipe[] = [
     ],
     groveNote: 'The whole bowl travels great — grill the corn at the grove, or make the entire thing at home and just carry it down.',
     source: "From Nick's recipe box.",
+  },
+
+  // ---- Basics (beginner) ----
+  {
+    slug: 'backyard-burgers-dogs',
+    title: 'Backyard Burgers & Dogs',
+    category: 'Mains',
+    tagline: 'The cookout classic, done right',
+    summary:
+      'Juicy burgers and snappy hot dogs over the coals — the everybody-happy grove cookout, with the few small tricks that keep them from drying out.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Spatula', 'Long tongs', 'Instant-read thermometer'],
+    prepTime: '10 min',
+    cookTime: '12 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        group: 'Burgers',
+        items: [
+          '1½ lb ground beef (80/20)',
+          'Salt and pepper',
+          '4 burger buns',
+          'Cheese slices',
+          'Lettuce, tomato, onion, pickles',
+          'Condiments to taste',
+        ],
+      },
+      { group: 'Dogs', items: ['8 good-quality hot dogs', '8 hot dog buns'] },
+    ],
+    steps: [
+      'Build a two-zone fire. Form the beef into 4 loose patties, press a dimple into each center, and season both sides right before they hit the grate.',
+      'Grill burgers over the hot zone ~3–4 min, flip ONCE, then ~3–4 min more; add cheese for the last minute. Pull at 160°F.',
+      'Roll the hot dogs over the medium zone, turning, until browned with a few blisters, ~5–7 min.',
+      'Toast the buns cut-side down over the cooler zone for the last 30–60 seconds.',
+      'Build and dress to taste.',
+    ],
+    groveNote:
+      'Flip burgers ONCE — pressing and flipping squeezes the juices out. The center dimple keeps them from puffing into meatballs.',
+    safety: 'Ground beef: 160°F. Hot dogs: heated through.',
+    source: 'Cookout basics for the grove.',
+  },
+  {
+    slug: 'grilled-chicken-thighs',
+    title: 'Simple Grilled Chicken Thighs',
+    category: 'Mains',
+    tagline: 'Forgiving, juicy, hard to mess up',
+    summary:
+      'Bone-in thighs are the most forgiving thing on the grill — a quick garlic-lemon marinade and a two-zone fire are all you need. A great recipe to learn on.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer'],
+    prepTime: '10 min + marinate',
+    cookTime: '30 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        items: [
+          '8 bone-in, skin-on chicken thighs',
+          '¼ cup olive oil',
+          '3 cloves garlic, minced',
+          '1 lemon (juice and zest)',
+          '1 tsp paprika',
+          '1 tsp salt',
+          '½ tsp pepper',
+          'Fresh herbs (optional)',
+        ],
+      },
+    ],
+    steps: [
+      'Whisk the marinade, coat the thighs, and rest 30 min (or overnight in the cooler).',
+      'Build a two-zone fire. Start the thighs skin-side UP on the cooler zone to render gently, ~15 min.',
+      'Move them skin-side DOWN over the hot zone to crisp, ~5–8 min, sliding back if flare-ups flare.',
+      'Pull at 175°F — dark meat is juiciest a little past the 165°F minimum.',
+      'Rest 5 minutes before serving.',
+    ],
+    groveNote: 'Thighs forgive overcooking far better than breasts — render skin-up first, crisp skin-down last.',
+    safety: 'Chicken: 165°F minimum; thighs are best at ~175°F.',
+    source: 'A beginner-friendly staple for the grove.',
+  },
+  {
+    slug: 'elote-grilled-corn',
+    title: 'Elote-Style Grilled Corn',
+    category: 'Sides',
+    tagline: 'Charred street corn',
+    summary:
+      'Sweet corn charred over the coals and slathered with a creamy, tangy chili-lime spread — the easiest crowd-pleaser at the grove.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs'],
+    prepTime: '10 min',
+    cookTime: '12 min',
+    serves: '6',
+    grillSetup: 'Direct heat',
+    ingredients: [
+      {
+        items: [
+          '6 ears sweet corn, shucked',
+          '⅓ cup mayonnaise',
+          '¼ cup sour cream',
+          '½ cup crumbled cotija (or Parmesan)',
+          '1 tsp chili powder',
+          '1 lime (juice + wedges)',
+          'Chopped cilantro',
+          'Salt',
+        ],
+      },
+    ],
+    steps: [
+      'Stir the mayo, sour cream, half the cotija, chili powder, and lime juice into a spread (do this at home and bring it cold).',
+      'Grill the corn over direct heat, turning, until charred in spots and bright yellow, ~8–12 min.',
+      'Slather the hot corn with the spread, then sprinkle with the remaining cotija, a dusting of chili powder, and cilantro.',
+      'Serve with lime wedges.',
+    ],
+    groveNote: 'No lid needed — just keep the corn moving over direct heat until it chars.',
+    source: 'A grove crowd-pleaser.',
+  },
+  {
+    slug: 'campfire-smores',
+    title: 'Campfire S’mores',
+    category: 'Sweets',
+    tagline: 'The classic, grove-style',
+    summary:
+      "Once the cooking's done, those dying coals are perfect for toasting marshmallows into gooey s'mores — the kids' favorite send-off to a cookout.",
+    difficulty: 'Beginner',
+    tools: ['Long skewers or roasting sticks', 'Heat cover (optional)'],
+    prepTime: '5 min',
+    cookTime: '5 min',
+    serves: 'A crowd',
+    grillSetup: 'Dying coals',
+    ingredients: [{ items: ['Marshmallows', 'Graham crackers', 'Chocolate bars'] }],
+    steps: [
+      'After cooking, let the coals burn down to a low glow — no flames, just gentle heat.',
+      'Skewer a marshmallow and hold it a few inches above the coals, turning slowly, until golden (or flame-kissed, if that’s your style).',
+      'Sandwich the hot marshmallow and a square of chocolate between two graham crackers; press gently to melt.',
+      'Wait a few seconds for the chocolate to soften, then enjoy.',
+    ],
+    groveNote: 'Use the LEFTOVER coals — no need to light more. Keep little hands back from the grill and supervise the skewers.',
+    safety: 'Coals stay hot for hours — keep kids at arm’s length and use long skewers.',
+    source: 'The classic campfire treat.',
+  },
+
+  // ---- Advanced ----
+  {
+    slug: 'grill-top-wok-stir-fry',
+    title: 'Grill-Top Wok Stir-Fry',
+    category: 'Mains',
+    tagline: 'Live-fire stir-fry',
+    summary:
+      "A grill-top wok turns the communal grill into a roaring stir-fry station — live fire hits temperatures a home stove can't, giving veg and shrimp that smoky 'wok hei' char.",
+    difficulty: 'Advanced',
+    tools: ['Grill-top wok', 'Chimney starter', 'Long spatula or paddle', 'Heat-resistant gloves'],
+    prepTime: '20 min',
+    cookTime: '10 min',
+    serves: '4',
+    grillSetup: 'Hot direct fire',
+    ingredients: [
+      {
+        group: 'Stir-fry',
+        items: [
+          '1 lb shrimp (or chicken/tofu)',
+          '4 cups mixed veg (peppers, snap peas, broccoli, carrots)',
+          '3 cloves garlic, minced',
+          '1 tbsp ginger, minced',
+          '3 green onions (whites/greens separated)',
+          '2 tbsp high-smoke-point oil',
+        ],
+      },
+      {
+        group: 'Sauce',
+        items: ['3 tbsp soy sauce', '1 tbsp oyster sauce', '1 tbsp rice vinegar', '1 tsp sesame oil', '1 tsp honey', 'Pinch red pepper flakes'],
+      },
+      { group: 'To serve', items: ['Cooked rice (bring from home)'] },
+    ],
+    steps: [
+      'Prep EVERYTHING first — stir-fry moves fast. Mix the sauce; have all veg and protein chopped and within reach.',
+      'Build a big, hot fire and set the wok directly over the coals to preheat until it’s smoking.',
+      'Add oil, then the garlic, ginger, and scallion whites — toss ~15 sec until fragrant.',
+      'Add the protein and stir-fry until nearly done, then push it up the sides of the wok.',
+      'Add the hard veg first (carrots, broccoli), then quick veg (peppers, snap peas), tossing constantly ~3–4 min.',
+      'Pour in the sauce, toss to glaze ~1 min, finish with scallion greens, and serve over rice.',
+    ],
+    groveNote:
+      'The grill-top wok is the advanced griller’s secret weapon — high sides plus live fire beat any home burner. Mise en place is everything; have it ALL ready before the wok goes on.',
+    safety: 'Shrimp: opaque and pink. Chicken: 165°F.',
+    source: 'A live-fire technique for the grove.',
+  },
+  {
+    slug: 'spatchcock-chicken',
+    title: 'Spatchcock Grilled Chicken',
+    category: 'Mains',
+    tagline: 'Whole bird, evenly cooked',
+    summary:
+      'Flatten a whole chicken (spatchcock) so it cooks evenly over indirect heat — crispy skin, juicy meat, and enough to feed the whole table.',
+    difficulty: 'Advanced',
+    tools: ['Kitchen shears', 'Chimney starter', 'Instant-read thermometer', 'Heat cover (optional)'],
+    prepTime: '15 min',
+    cookTime: '60 min',
+    serves: '4–6',
+    grillSetup: 'Indirect (coals banked to one side)',
+    ingredients: [
+      {
+        items: [
+          '1 whole chicken (3.5–4 lb)',
+          '2 tbsp olive oil',
+          '1 tbsp salt',
+          '2 tsp paprika',
+          '1 tsp garlic powder',
+          '1 tsp pepper',
+          '1 lemon',
+        ],
+      },
+    ],
+    steps: [
+      'Spatchcock the bird: with kitchen shears, cut out the backbone, flip it over, and press flat to crack the breastbone.',
+      'Pat dry, rub all over with oil and the spice mix, and let it sit while the fire builds.',
+      'Build an indirect fire — coals banked to one side. Lay the chicken skin-up on the COOL side.',
+      'Cook indirect ~45–60 min until the breast reads 165°F and the thighs ~175°F. A cover/dome speeds it up and holds heat.',
+      'For the last few minutes, slide it skin-side down over the coals to crisp the skin — watch for flare-ups.',
+      'Rest 10 min, squeeze lemon over, and cut into pieces.',
+    ],
+    groveNote:
+      'Spatchcocking is the trick to a whole bird on charcoal — flat means even cooking. Cook it indirect (away from the coals) or the skin burns before the inside is done.',
+    safety: 'Chicken: breast 165°F, thighs juiciest ~175°F.',
+    source: 'A whole-bird technique for the grove.',
+  },
+  {
+    slug: 'reverse-sear-ribeye',
+    title: 'Reverse-Sear Ribeye',
+    category: 'Mains',
+    tagline: 'Steakhouse, edge to edge',
+    summary:
+      'Cook a thick ribeye gently on the cool side first, then sear it hard over the coals — edge-to-edge pink with a deep crust. The pro move for thick steaks.',
+    difficulty: 'Advanced',
+    tools: ['Chimney starter', 'Instant-read thermometer', 'Long tongs', 'Heat cover (optional)'],
+    prepTime: '10 min',
+    cookTime: '30 min',
+    serves: '2',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        items: [
+          '1 thick (1.5–2 inch) ribeye',
+          'Salt and pepper',
+          '1 tbsp oil',
+          'Compound butter (optional)',
+          'Rosemary & garlic (optional)',
+        ],
+      },
+    ],
+    steps: [
+      'Salt the steak well and let it come toward room temperature while the fire builds.',
+      'Build a two-zone fire. Set the steak on the COOL side (a cover/dome helps) and cook slow until the center hits ~110–115°F, ~20–25 min, flipping occasionally.',
+      'Rest it briefly while you stoke the coals screaming hot.',
+      'Sear over the hot zone ~1 min per side (and roll it to sear the edges) until a deep crust forms and the center reaches ~125°F for medium-rare.',
+      'Rest 5–10 min, top with compound butter, and slice against the grain.',
+    ],
+    groveNote:
+      'Reverse sear = gentle cook first, hard sear last. It’s the most reliable way to nail a thick steak on charcoal — no gray band, all crust.',
+    safety: 'USDA medium for beef is 145°F; 125°F is a chef’s medium-rare — your call.',
+    source: 'A steakhouse technique for the grove.',
+  },
+  {
+    slug: 'grilled-pizza',
+    title: 'Grilled Pizza Margherita',
+    category: 'Mains',
+    tagline: 'Blistered, smoky crust',
+    summary:
+      'Pizza dough cooks shockingly well right on the grate — live fire blisters and chars the crust like a wood oven. Move fast and keep the toppings light.',
+    difficulty: 'Advanced',
+    tools: ['Chimney starter', 'Pizza peel or large spatula', 'Cast-iron or pizza stone (optional)', 'Heat cover (optional)'],
+    prepTime: '20 min',
+    cookTime: '8 min',
+    serves: '2–4',
+    grillSetup: 'Two-zone fire (hot)',
+    ingredients: [
+      {
+        items: [
+          '1 lb pizza dough (store-bought is fine)',
+          'Olive oil',
+          '½ cup tomato sauce',
+          '8 oz fresh mozzarella',
+          'Fresh basil',
+          'Flour or semolina for dusting',
+          'Toppings of choice',
+        ],
+      },
+    ],
+    steps: [
+      'Build a two-zone fire with a hot side. Stretch the dough on a floured peel and brush one side with oil.',
+      'Lay the dough oiled-side down over the hot zone and grill ~2–3 min, until the bottom is set and charred underneath.',
+      'Flip the crust with tongs or the peel; brush with sauce and add cheese and toppings on the grilled side.',
+      'Slide to the COOLER zone, cover with a dome (or loose foil), and cook ~3–5 min until the cheese melts and the bottom crisps.',
+      'Finish with fresh basil and a drizzle of olive oil; slice and serve.',
+    ],
+    groveNote:
+      'Keep toppings light or the crust burns before they cook. A cover/dome melts the cheese without flipping. Have everything ready — grilled pizza is fast.',
+    source: 'A wood-oven trick, done on charcoal.',
+  },
+
+  // ---- Local Catch (Jersey Shore) ----
+  {
+    slug: 'grilled-striped-bass',
+    title: 'Grilled Striped Bass',
+    category: 'Local Catch',
+    tagline: 'The prized Jersey striper',
+    summary:
+      'Striped bass is THE Jersey Shore catch — firm, meaty, and clean-flavored. Grilled whole or as thick fillets with lemon and herbs, it’s the best thing off the grate all summer.',
+    difficulty: 'Intermediate',
+    tools: ['Chimney starter', 'Fish spatula', 'Instant-read thermometer', 'Heavy-duty foil'],
+    prepTime: '15 min',
+    cookTime: '15 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire, skin-on',
+    ingredients: [
+      {
+        items: [
+          '2 lb striped bass fillets (skin on), or 1 whole fish, scaled & gutted',
+          '3 tbsp olive oil',
+          '1 lemon, sliced',
+          '2 cloves garlic',
+          'Fresh thyme & parsley',
+          'Salt and pepper',
+        ],
+      },
+    ],
+    steps: [
+      'Build a two-zone fire and oil the grate very well (skin sticks). Pat the fish dry, brush with oil, and season inside and out; tuck lemon and herbs into a whole fish.',
+      'Lay skin-side down over the medium zone and cook 7–9 min without moving it.',
+      'Flip once with a fish spatula; cook 4–6 min more to 145°F. (A whole fish runs longer — about 10–12 min per side.)',
+      'Rest a couple minutes and serve with lemon.',
+    ],
+    groveNote: 'Striped bass has firm flesh that grills better than most fish — great for learning whole fish. Oil the grate and don’t rush the flip.',
+    safety: 'Fish: 145°F. Check current NJ striped bass size & season limits before keeping one.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+  {
+    slug: 'grilled-bluefish',
+    title: 'Grilled Bluefish',
+    category: 'Local Catch',
+    tagline: "Jersey's bold, oily catch",
+    summary:
+      'Bluefish is a hard-fighting local catch with rich, oily flesh that stands up to fire and bold flavor. Fresh off the boat and grilled with plenty of lemon, it’s a shore classic.',
+    difficulty: 'Intermediate',
+    tools: ['Chimney starter', 'Fish spatula', 'Heavy-duty foil', 'Instant-read thermometer'],
+    prepTime: '10 min',
+    cookTime: '12 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire, skin-on',
+    ingredients: [
+      {
+        items: [
+          '2 lb bluefish fillets, skin on',
+          '3 tbsp olive oil',
+          '2 cloves garlic, minced',
+          '1 lemon (juice + wedges)',
+          '1 tsp paprika',
+          'Salt and pepper',
+          'Fresh parsley',
+        ],
+      },
+    ],
+    steps: [
+      'Bluefish is best SUPER fresh — bleed and ice it right after the catch. Pat the fillets dry.',
+      'Build a two-zone fire and oil the grate. Brush the fillets with oil, garlic, and lemon, then season.',
+      'Lay skin-side down over the medium zone and cook 6–8 min without moving — the skin shields the flesh.',
+      'Flip once with a fish spatula; cook 2–4 min more to 145°F.',
+      'Squeeze lemon over and scatter with parsley.',
+    ],
+    groveNote: 'Bluefish’s strong flavor mellows with acid — be generous with the lemon. Grill it the SAME DAY it’s caught for the best taste.',
+    safety: 'Fish: 145°F. Bleed and ice bluefish right away — it doesn’t keep like leaner fish.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+  {
+    slug: 'grilled-fluke',
+    title: 'Grilled Fluke (Summer Flounder)',
+    category: 'Local Catch',
+    tagline: 'Delicate, in a foil boat',
+    summary:
+      'Fluke (summer flounder) is a prized, mild, lean local flatfish — too delicate for the bare grate, so it’s grilled in a foil boat with butter, lemon, and herbs.',
+    difficulty: 'Intermediate',
+    tools: ['Chimney starter', 'Heavy-duty foil', 'Fish spatula'],
+    prepTime: '10 min',
+    cookTime: '12 min',
+    serves: '2',
+    grillSetup: 'Two-zone fire (foil)',
+    ingredients: [
+      {
+        items: [
+          '2 fluke fillets (~6 oz each)',
+          '2 tbsp butter',
+          '1 lemon (slices + juice)',
+          '1 clove garlic',
+          'Fresh dill or parsley',
+          'Salt and pepper',
+          'Splash of white wine (optional)',
+        ],
+      },
+    ],
+    steps: [
+      'Build a two-zone fire. Lay each fillet on an oiled foil square; top with butter, garlic, lemon slices, herbs, salt, pepper (and a splash of wine).',
+      'Fold the foil into a sealed packet/boat.',
+      'Set over the medium zone ~10–12 min, until the fluke is opaque and flakes (145°F).',
+      'Open carefully — watch the steam — and serve right from the foil with the buttery juices.',
+    ],
+    groveNote: 'Fluke is delicate and lean — a foil boat keeps it from sticking, falling apart, or drying out. Don’t overcook it.',
+    safety: 'Fish: 145°F (flakes easily). Check NJ fluke size & season limits.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+  {
+    slug: 'grilled-clams',
+    title: 'Grilled Clams',
+    category: 'Local Catch',
+    tagline: 'They pop right open',
+    summary:
+      'The easiest seafood on the grill: set littleneck clams right on the grate and they pop open in their own briny juice. Hit them with garlic butter — done in minutes.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs', 'Cast-iron pan or foil tray (for the butter)'],
+    prepTime: '10 min',
+    cookTime: '8 min',
+    serves: '4 (appetizer)',
+    grillSetup: 'Hot direct fire',
+    ingredients: [
+      {
+        items: [
+          '2–3 dozen littleneck clams, scrubbed',
+          '1 stick butter',
+          '4 cloves garlic, minced',
+          '¼ cup white wine',
+          '1 lemon',
+          'Fresh parsley',
+          'Crusty bread, to serve',
+        ],
+      },
+    ],
+    steps: [
+      'Scrub the clams well; discard any that are cracked or won’t close when tapped.',
+      'Melt the butter with garlic, wine, and a squeeze of lemon in a cast-iron pan set on the grill.',
+      'Set the clams directly on the grate over a hot, direct fire (tent loosely with foil if you like).',
+      'In 5–8 min they’ll POP open in their own juice — pull each one as it opens, and discard any that stay shut.',
+      'Dunk in the garlic butter or pour it over, scatter with parsley, and serve with crusty bread to mop the juices.',
+    ],
+    groveNote: 'Grilled clams are the perfect beginner seafood — the grill does the work and they tell you when they’re done by opening.',
+    safety: 'Use live, tightly-closed clams; discard any that don’t open after cooking.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+  {
+    slug: 'grilled-blue-crabs',
+    title: 'Grilled Blue Crabs',
+    category: 'Local Catch',
+    tagline: 'Old Bay & live fire',
+    summary:
+      'Jersey blue crabs, steamed then grilled with garlic-Old Bay butter — a messy, hands-on, only-at-the-shore feast. Steam them first, then kiss them with smoke.',
+    difficulty: 'Advanced',
+    tools: ['Chimney starter', 'Long tongs', 'Large pot (for steaming)', 'Cast-iron pan or foil tray'],
+    prepTime: '20 min',
+    cookTime: '15 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        items: [
+          '12 live blue crabs',
+          '1 stick butter',
+          '4 cloves garlic, minced',
+          '2 tbsp Old Bay',
+          '1 lemon (juice)',
+          'Fresh parsley',
+        ],
+      },
+    ],
+    steps: [
+      'Steam the crabs first (this cooks them through and firms the meat): in a big pot with an inch of water + Old Bay, steam ~10 min until bright red. Cool slightly.',
+      'Halve or clean the crabs. Melt the butter with garlic, Old Bay, and lemon in a cast-iron pan on the grill.',
+      'Brush the crabs generously with the garlic-Old Bay butter.',
+      'Grill cut-side down over a medium-hot zone ~3–4 min, brushing with more butter, until the edges char and they’re hot through.',
+      'Pile them high, pour over the remaining butter, and finish with parsley and lemon. Bring napkins.',
+    ],
+    groveNote: 'Steam-then-grill is the move — steaming cooks them through and firms the meat; the grill adds the smoke and char. Pure Jersey Shore.',
+    safety: 'Steam live crabs until bright red and fully cooked; keep them cold until cook time.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+]
+
+// ---- Tools / gear guide ----
+export type Tool = { name: string; emoji: string; essential: boolean; what: string; tip?: string }
+
+export const tools: Tool[] = [
+  // Essentials
+  {
+    name: 'Chimney Starter',
+    emoji: '🔥',
+    essential: true,
+    what: 'A metal cylinder that lights charcoal fast with just newspaper — no lighter fluid, no chemical taste. The single best tool for our grills.',
+    tip: 'Fill it, light the paper underneath, wait ~15 min for the top coals to turn gray, then dump.',
+  },
+  {
+    name: 'Long-Handled Tongs',
+    emoji: '🍴',
+    essential: true,
+    what: 'Sturdy, long tongs keep your hands away from the heat and let you flip food and rake coals.',
+    tip: 'Get the 16-inch ones — the short kitchen pair will cook your knuckles.',
+  },
+  {
+    name: 'Instant-Read Thermometer',
+    emoji: '🌡️',
+    essential: true,
+    what: 'A ~$12 probe takes all the guesswork out — hit the safe temps every time.',
+    tip: '165°F chicken · 160°F burgers · 145°F fish, pork & steak.',
+  },
+  {
+    name: 'Heavy-Duty Aluminum Foil',
+    emoji: '🧻',
+    essential: true,
+    what: 'Foil packets and boats cook delicate fish, veggies, and potatoes right on the grate — and a wadded ball scrubs the grate clean.',
+    tip: 'Heavy-duty only; regular foil tears over live fire.',
+  },
+  {
+    name: 'Long Lighter or Matches',
+    emoji: '🕯️',
+    essential: true,
+    what: 'A long-reach lighter or fireplace matches to light the chimney safely, without singeing your hand.',
+  },
+  {
+    name: 'Grill Brush or Scraper',
+    emoji: '🧽',
+    essential: true,
+    what: 'Clean the hot grate before you cook so your food does not stick to last cookout’s char.',
+    tip: 'A ball of foil held in tongs works in a pinch — and avoids loose wire bristles.',
+  },
+  {
+    name: 'Cooler with Ice',
+    emoji: '🧊',
+    essential: true,
+    what: 'Keep raw meat and seafood cold until the moment it hits the grate — food safety starts in the cooler.',
+  },
+  {
+    name: 'Heat-Resistant Gloves',
+    emoji: '🧤',
+    essential: false,
+    what: 'Move a hot chimney, grate, or cast-iron pan without fumbling a folded towel.',
+  },
+  // Worth the upgrade
+  {
+    name: 'Heat Cover / Basting Dome',
+    emoji: '🛎️',
+    essential: false,
+    what: 'Our park grills have no lid — a metal cover (or an inverted disposable foil pan) traps heat to melt cheese, cook thicker cuts, and hold warmth.',
+    tip: 'The cheap version: an upside-down foil roasting pan.',
+  },
+  {
+    name: 'Cast-Iron Skillet or Griddle',
+    emoji: '🍳',
+    essential: false,
+    what: 'Turns the grate into a flat-top for smashburgers, crab cakes, eggs, and anything that would fall through the bars.',
+    tip: 'Used in: Crab Cakes, Grilled Clams, Grilled Pizza.',
+  },
+  {
+    name: 'Grill-Top Wok',
+    emoji: '🥘',
+    essential: false,
+    what: 'High sides plus live fire let you stir-fry over real heat a home stove cannot match — that smoky wok-hei char.',
+    tip: 'Used in: Grill-Top Wok Stir-Fry.',
+  },
+  {
+    name: 'Fish Spatula',
+    emoji: '🐟',
+    essential: false,
+    what: 'A thin, flexible blade slides under delicate fish for a clean flip without tearing.',
+    tip: 'Used in: every Local Catch fish recipe.',
+  },
+  {
+    name: 'Metal Skewers',
+    emoji: '🍢',
+    essential: false,
+    what: 'For kebabs, shrimp, and veg — and toasting marshmallows. Metal beats wood: no soaking, reusable.',
+  },
+  {
+    name: 'Spray Bottle',
+    emoji: '💦',
+    essential: false,
+    what: 'A spritz of water or cider vinegar tames flare-ups and keeps low-and-slow meats moist.',
+    tip: 'Used in: Best Ribs.',
+  },
+  {
+    name: 'Wood Chunks',
+    emoji: '🪵',
+    essential: false,
+    what: 'Drop a fruitwood or hickory chunk on the coals for real smoke flavor on ribs and low-and-slow cooks.',
+  },
+  {
+    name: 'Sharp Knife & Cutting Board',
+    emoji: '🔪',
+    essential: false,
+    what: 'Slice against the grain, portion fish, and prep right at the grove. Bring a small board and a sharp knife.',
   },
 ]
 

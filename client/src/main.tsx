@@ -10,6 +10,7 @@ import School from './pages/School'
 import Rules from './pages/Rules'
 import Recipes from './pages/Recipes'
 import RecipeDetail from './pages/RecipeDetail'
+import Tools from './pages/Tools'
 import Reserve from './pages/Reserve'
 import Blog from './pages/Blog'
 import Post from './pages/Post'
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
       { path: '/rules', element: <Rules /> },
       { path: '/recipes', element: <Recipes /> },
       { path: '/recipes/:slug', element: <RecipeDetail /> },
+      { path: '/tools', element: <Tools /> },
       { path: '/reserve', element: <Reserve /> },
       { path: '/blog', element: <Blog /> },
       { path: '/blog/:slug', element: <Post /> },

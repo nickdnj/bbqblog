@@ -47,9 +47,25 @@ export default function RecipeDetail() {
         </div>
 
         {recipe.groveNote && (
-          <div className="flex gap-3 items-start mb-10 bg-white border border-navy/10 border-l-4 border-l-seafoam rounded-xl p-5 shadow-[var(--shadow-soft)]">
+          <div className="flex gap-3 items-start mb-8 bg-white border border-navy/10 border-l-4 border-l-seafoam rounded-xl p-5 shadow-[var(--shadow-soft)]">
             <span className="text-2xl leading-none" aria-hidden>🔥</span>
             <p className="text-slate"><strong>At the grove:</strong> {recipe.groveNote}</p>
+          </div>
+        )}
+
+        {recipe.tools && recipe.tools.length > 0 && (
+          <div className="mb-10">
+            <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+              <h2 className="text-lg text-navy-dark">Tools you’ll need</h2>
+              <Link to="/tools" className="text-sm font-semibold text-navy">See the gear guide →</Link>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {recipe.tools.map((t) => (
+                <span key={t} className="px-3 py-1.5 rounded-full bg-sand text-navy-dark text-sm font-medium border border-navy/10">
+                  {t}
+                </span>
+              ))}
+            </div>
           </div>
         )}
 
