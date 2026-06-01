@@ -13,8 +13,18 @@ import Reserve from './pages/Reserve'
 import Blog from './pages/Blog'
 import Post from './pages/Post'
 import NotFound from './pages/NotFound'
+import Login from './pages/admin/Login'
+import Dashboard from './pages/admin/Dashboard'
+import PostEdit from './pages/admin/PostEdit'
 
 const router = createBrowserRouter([
+  // Admin (own shell, no public chrome)
+  { path: '/admin/login', element: <Login /> },
+  { path: '/admin', element: <Dashboard /> },
+  { path: '/admin/posts/new', element: <PostEdit /> },
+  { path: '/admin/posts/:id', element: <PostEdit /> },
+
+  // Public site
   {
     element: (
       <>
