@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+/* Coastal design system — carried over from the original Wharfside Picnic Guide */
+@theme {
+  --color-navy: #123c5b;
+  --color-navy-dark: #0b2c42;
+  --color-seafoam: #7bdac4;
+  --color-sand: #f4ede3;
+  --color-foam: #f9fafb;
+  --color-slate: #3b4a5a;
+  --color-ink: #1d2933;
+  --color-muted: #5f7386;
+
+  --font-display: 'Barlow', 'Source Sans 3', sans-serif;
+  --font-body: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --shadow-soft: 0 20px 40px rgba(15, 40, 65, 0.08);
+  --shadow-card: 0 14px 30px rgba(18, 60, 91, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-foam);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-navy-dark);
+  line-height: 1.2;
+}
+
+/* Honor reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
