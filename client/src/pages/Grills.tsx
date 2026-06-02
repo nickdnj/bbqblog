@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from '../components/ui'
-import { grillSpecs } from '../data/content'
+import { grillSpecs, grillPhotos } from '../data/content'
+import PhotoPlaceholder from '../components/PhotoPlaceholder'
 
 export default function Grills() {
   return (
@@ -56,6 +57,20 @@ export default function Grills() {
             ))}
           </dl>
         </aside>
+      </div>
+
+      {/* Photo gallery — placeholders until Nick drops in real photos */}
+      <div className="mt-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <p className="uppercase tracking-[0.1em] text-xs font-semibold text-seafoam mb-2">Photos</p>
+          <h3 className="text-2xl text-navy-dark">A look at the grove</h3>
+          <p className="mt-2 text-muted">Photos coming soon — here’s the shot list we’ll capture at the grills.</p>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {grillPhotos.map((p) => (
+            <PhotoPlaceholder key={p.caption} {...p} />
+          ))}
+        </div>
       </div>
     </Section>
   )

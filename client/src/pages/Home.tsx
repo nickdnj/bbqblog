@@ -31,7 +31,7 @@ export default function Home() {
               flipping burgers by the water, one simple step at a time.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/start" className={btnPrimary}>Start grilling in 6 steps</Link>
+              <Link to="/start" className={btnPrimary}>Start Here →</Link>
               <Link to="/recipes" className={btnGhost}>Browse the recipes</Link>
             </div>
           </div>

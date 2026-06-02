@@ -57,15 +57,153 @@ export const steps: Step[] = [
   },
 ]
 
-export type Episode = { num: number; title: string; desc: string; youtubeId: string }
+// The three valid ways to light our charcoal grills. Bob's recommendation:
+// match-light or the chimney starter — skip loose lighter fluid (extra to buy & store).
+export type LightingMethod = {
+  name: string
+  emoji: string
+  recommended: boolean
+  how: string
+  pros: string[]
+  cons: string[]
+}
 
+export const lightingMethods: LightingMethod[] = [
+  {
+    name: 'Match-Light Charcoal',
+    emoji: '🔥',
+    recommended: true,
+    how: 'Briquettes that come pre-soaked with lighter fluid. Pour them into the firebox, touch a match or long lighter to a few spots, and they catch on their own.',
+    pros: ['Dead simple — light it and walk away', 'Nothing extra to buy or store', 'Ready in ~15 minutes'],
+    cons: ['A faint lighter-fluid smell as it burns off', 'Costs a little more than plain charcoal'],
+  },
+  {
+    name: 'Charcoal + Lighter Fluid',
+    emoji: '🧴',
+    recommended: false,
+    how: 'Pile plain briquettes, squirt lighter fluid over the UNLIT pile, wait a minute for it to soak in, then light from the side.',
+    pros: ['Cheapest charcoal', 'Works in a pinch'],
+    cons: [
+      'You have to buy AND store a can of lighter fluid',
+      'NEVER add fluid to lit coals — it can flare back at you',
+      'Chemical taste if you start cooking too soon',
+    ],
+  },
+  {
+    name: 'Chimney Starter',
+    emoji: '🛢️',
+    recommended: true,
+    how: 'Fill the metal chimney with plain charcoal, stuff newspaper underneath, light the paper, and set it on the grate. In ~15 min the top coals turn gray — dump them in.',
+    pros: ['No lighter fluid, no chemical taste', 'Even, reliable fire every time', 'About as fast as the rest'],
+    cons: ['One more tool to bring', 'Gets hot — use the handle and gloves'],
+  },
+]
+
+export const lightingRecommendation =
+  "All three work. Our pick: match-light charcoal for dead-simple, or a chimney starter for the cleanest fire. We'd skip loose lighter fluid — it's one more thing to buy and store, and you can never add it to already-lit coals."
+
+export type StoryboardBeat = { time: string; shot: string; script: string }
+export type Storyboard = { objective: string; beats: StoryboardBeat[]; takeaways: string[] }
+export type Episode = { num: number; title: string; desc: string; level: string; youtubeId: string; storyboard: Storyboard }
+
+// Storyboards are embedded so Nick + Bob can review each video plan live before shooting.
 export const episodes: Episode[] = [
-  { num: 1, title: 'Light Your First Charcoal Fire', desc: 'The chimney-starter method, start to glowing coals — no guesswork, no lighter fluid.', youtubeId: '' },
-  { num: 2, title: 'Is It Ready? Reading Your Coals', desc: 'How to tell when the coals are perfect, the hand heat-test, and setting up a cool "safe zone".', youtubeId: '' },
-  { num: 3, title: 'Burgers & Dogs: Your First Cook', desc: 'Forgiving first-timer foods, the flip-once trick, and hitting the safe temps every time.', youtubeId: '' },
-  { num: 4, title: 'Lighter Fluid, the Safe Way', desc: 'Prefer fluid? The right way to use it — and the one thing you must never do.', youtubeId: '' },
-  { num: 5, title: 'Beat the Wind on the Waterfront', desc: 'Spin the grill, block the gust, and keep your fire steady on a breezy Jersey Shore day.', youtubeId: '' },
-  { num: 6, title: 'Cool Down & Clean Up Right', desc: 'Cold ash into the metal bins, a quick grate scrub, and leaving it perfect for the next neighbor.', youtubeId: '' },
+  {
+    num: 1,
+    title: 'Three Ways to Light the Grill',
+    desc: 'Match-light, lighter fluid, and the chimney starter — all three demonstrated, then Bob’s recommendation.',
+    level: 'Beginner',
+    youtubeId: '',
+    storyboard: {
+      objective:
+        'Show all three valid ways to light our charcoal grills, then land on the recommendation: match-light or chimney starter (skip loose lighter fluid — it’s one more thing to buy and store).',
+      beats: [
+        { time: '0:00–0:10', shot: 'Bob at a grill, coals unlit', script: '“Three ways to light this thing. I’ll show you all three — then tell you the two I’d actually use.”' },
+        { time: '0:10–0:40', shot: 'Pouring match-light briquettes; touching a long lighter to them; they catch', script: 'Method 1 — Match-Light: “The lighter fluid’s already baked into these. Light a few spots, and walk away. Easiest by far.”' },
+        { time: '0:40–1:15', shot: 'Plain briquettes piled; squirting fluid on the UNLIT pile; waiting; lighting from the side', script: 'Method 2 — Lighter Fluid: “Squirt it on the cold pile, wait a minute, light. And the big rule —” (on-screen text: NEVER add fluid to lit coals) “— never to lit coals.”' },
+        { time: '1:15–2:00', shot: 'Filling a chimney, newspaper underneath, lighting; cut to gray coals; dumping into firebox', script: 'Method 3 — Chimney: “Fill it, paper underneath, light, wait about fifteen minutes for the tops to go gray, dump. No fluid, no chemical taste.”' },
+        { time: '2:00–2:20', shot: 'Bob to camera, three coal piles behind him', script: 'Verdict: “All three work. I’d skip the loose lighter fluid — one more thing to buy and store. Go match-light for simple, or a chimney for the cleanest fire.”' },
+        { time: '2:20–2:30', shot: 'Coals glowing gray', script: 'CTA: “However you light it — wait for that gray glow. That’s next.”' },
+      ],
+      takeaways: [
+        'All three methods are valid',
+        'Recommended: match-light OR chimney starter',
+        'Lighter fluid means buying & storing a can — and never add it to lit coals',
+        'Whichever you use, wait for gray, ashed-over coals before cooking',
+      ],
+    },
+  },
+  {
+    num: 2,
+    title: 'Is It Ready? Reading Your Coals',
+    desc: 'How to tell when the coals are perfect, the hand heat-test, and setting up a two-zone fire.',
+    level: 'Beginner',
+    youtubeId: '',
+    storyboard: {
+      objective: 'Teach beginners to read coal readiness by eye, do the hand heat-test, and build a two-zone fire with a cool "safe zone."',
+      beats: [
+        { time: '0:00–0:10', shot: 'Close-up of coals turning from black to gray', script: '“Flames don’t mean ready. THIS means ready.”' },
+        { time: '0:10–0:40', shot: 'Bob pointing at gray, ashed-over coals', script: '“When most of the coals are glowing and covered in gray ash — about 15 minutes in — you’re good.”' },
+        { time: '0:40–1:10', shot: 'Hand held 5 inches over the grate, counting', script: 'Hand test: “No thermometer? Hold your hand five inches up. Pull back at ‘three Mississippi’ and it’s hot enough.”' },
+        { time: '1:10–1:50', shot: 'Raking coals to one side with tongs', script: 'Two-zone: “Push most of the coals to one side — a hot zone to cook, a cool side to move food if it flares.”' },
+        { time: '1:50–2:00', shot: 'Bob gives a thumbs up over the set fire', script: 'CTA: “Now you’ve got a fire you can control. Let’s cook.”' },
+      ],
+      takeaways: ['Ready = glowing + gray ash, not flames', 'The 3-second hand test', 'Build a two-zone fire (hot side + cool "safe zone")'],
+    },
+  },
+  {
+    num: 3,
+    title: 'Burgers & Dogs: Your First Cook',
+    desc: 'Forgiving first-timer foods, the flip-once trick, and hitting the safe temps every time.',
+    level: 'Beginner',
+    youtubeId: '',
+    storyboard: {
+      objective: 'Walk a first-timer through cooking burgers and dogs to safe temps with confidence — the flip-once rule and the thermometer.',
+      beats: [
+        { time: '0:00–0:10', shot: 'Sizzling burgers on the grate', script: '“If you can cook a burger, you can grill. Let’s do it right.”' },
+        { time: '0:10–0:40', shot: 'Forming patties, dimpling centers, seasoning', script: '“Loose patties, a dimple in the middle so they don’t puff up, salt and pepper right before they hit the grate.”' },
+        { time: '0:40–1:20', shot: 'Burgers searing; ONE flip; cheese added', script: 'Flip-once: “Resist the urge to flip and press. Once. That’s it. Cheese in the last minute.”' },
+        { time: '1:20–1:50', shot: 'Thermometer reading 160°F; dogs blistering', script: 'Temps: “Burgers to 160. Dogs just need color and blisters. A twelve-dollar thermometer takes out all the guessing.”' },
+        { time: '1:50–2:00', shot: 'Finished burger built on a toasted bun', script: 'CTA: “Toast those buns, build it up, you’re a griller now.”' },
+      ],
+      takeaways: ['Dimple the patties; season just before grilling', 'Flip ONCE — don’t press', 'Burgers 160°F, dogs hot through', 'A thermometer removes the guesswork'],
+    },
+  },
+  {
+    num: 4,
+    title: 'Beat the Wind on the Waterfront',
+    desc: 'Spin the grill, block the gust, and keep your fire steady on a breezy Jersey Shore day.',
+    level: 'Intermediate',
+    youtubeId: '',
+    storyboard: {
+      objective: 'Show how to handle wind off the river using the grill’s 360° rotation and body position so the fire lights and burns steady.',
+      beats: [
+        { time: '0:00–0:10', shot: 'Wind whipping; Bob shielding a lighter', script: '“The river breeze is great — until you’re trying to light a fire.”' },
+        { time: '0:10–0:45', shot: 'Bob rotating the grill head on its pedestal', script: 'Rotation: “These spin a full 360. Turn the firebox so YOU block the wind — your back to the gust.”' },
+        { time: '0:45–1:20', shot: 'Lighting succeeds out of the wind; coals glowing evenly', script: '“Out of the wind, it lights fast and burns even — no hot spots, no blowing ash.”' },
+        { time: '1:20–1:40', shot: 'Bob adjusting position as wind shifts', script: '“Wind shifts? Spin the grill again. That’s the whole trick.”' },
+      ],
+      takeaways: ['Our grills rotate 360° — use it', 'Put your back to the wind to light', 'Re-spin when the wind shifts'],
+    },
+  },
+  {
+    num: 5,
+    title: 'Cool Down & Clean Up Right',
+    desc: 'Cold ash into the metal bins, a quick grate scrub, and leaving it perfect for the next neighbor.',
+    level: 'Beginner',
+    youtubeId: '',
+    storyboard: {
+      objective: 'Show the right way to shut down a communal grill: let coals go fully cold, dispose of cold ash in the metal bins, scrub the grate, leave it better than you found it.',
+      beats: [
+        { time: '0:00–0:10', shot: 'Bob at a grill after cooking', script: '“Cooking’s done — but you’re not. This part keeps the grove nice for everybody.”' },
+        { time: '0:10–0:40', shot: 'Coals burning down; clock/sun graphic for time passing', script: '“Let the coals burn all the way down and go COLD. That can take a couple hours — never scoop warm ash.”' },
+        { time: '0:40–1:10', shot: 'Scooping cold ash into the covered metal bin', script: '“Cold ash goes in the metal bins — only the metal bins. Never the trash, never the dunes.”' },
+        { time: '1:10–1:40', shot: 'Scrubbing the grate; wiping the shelf; bagging trash', script: '“Quick scrub of the grate, wipe the shelf, bag your trash.”' },
+        { time: '1:40–1:55', shot: 'Bob walking away from a clean grill', script: 'CTA: “Leave it better than you found it. The next neighbor will thank you.”' },
+      ],
+      takeaways: ['Coals must be fully COLD before disposal', 'Cold ash → covered metal bins only', 'Scrub the grate, wipe the shelf, take your trash'],
+    },
+  },
 ]
 
 export const grillSpecs: [string, string][] = [
@@ -79,6 +217,19 @@ export const grillSpecs: [string, string][] = [
   ['Finish', 'High-heat black enamel'],
   ['Extras', 'Utility shelf each'],
   ['Weight', '~98 lb each'],
+]
+
+// Photo slots for the Grills page. Drop a file in client/public/photos/ and set `src`
+// (e.g. '/photos/grove.jpg'); until then each shows a captioned placeholder of the shot to take.
+export type GrillPhoto = { caption: string; shot: string; src?: string }
+
+export const grillPhotos: GrillPhoto[] = [
+  { caption: 'The picnic grove', shot: 'Wide shot of the grove — grills + new picnic tables, water behind.' },
+  { caption: 'A grill, head-on', shot: 'One Kay Park SF163.5 on its pedestal, clean, utility shelf visible.' },
+  { caption: 'The flip-back grate', shot: 'Close-up of the grate flipped up on its hinge — the ½″ rods.' },
+  { caption: 'Pedestal & shelf', shot: 'The 3½″ galvanized pedestal in its concrete pad + the bolt-on shelf.' },
+  { caption: 'Glowing coals', shot: 'Top-down of gray, ashed-over coals — the “it’s ready” shot.' },
+  { caption: 'In action', shot: 'Food on the grate over the coals — burgers or fish, a little smoke.' },
 ]
 
 export type RuleCard = { title: string; items: string[] }
@@ -140,8 +291,12 @@ export const rules: RuleCard[] = [
   },
 ]
 
-export const RECIPE_CATEGORIES = ['Mains', 'Seafood', 'Local Catch', 'Sides', 'Sweets'] as const
+// Grilling food-type categories (Local Catch = Jersey Shore catches, front and center).
+export const RECIPE_CATEGORIES = ['Beef', 'Pork', 'Poultry', 'Seafood', 'Local Catch', 'Veggies & Sides', 'Sweets'] as const
 export type RecipeCategory = (typeof RECIPE_CATEGORIES)[number]
+
+export const RECIPE_SEASONS = ['Spring', 'Summer', 'Fall', 'Year-round'] as const
+export type RecipeSeason = (typeof RECIPE_SEASONS)[number]
 
 export type IngredientGroup = { group?: string; items: string[] }
 
@@ -149,6 +304,7 @@ export type Recipe = {
   slug: string
   title: string
   category: RecipeCategory
+  season: RecipeSeason
   tagline: string
   summary: string
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
@@ -173,7 +329,8 @@ export const recipes: Recipe[] = [
     slug: 'grilled-pork-chops',
     tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer', 'Cast-iron pan or foil tray'],
     title: 'Grilled Pork Chops with Farro & Charred Greens',
-    category: 'Mains',
+    category: 'Pork',
+    season: 'Year-round',
     tagline: 'Juicy chops + lemony farro salad',
     summary:
       'Thick pork chops seared over the coals to a juicy 145°F, served with a bright lemon-Parmesan farro salad and quick-charred greens.',
@@ -223,6 +380,7 @@ export const recipes: Recipe[] = [
     tools: ['Chimney starter', 'Fish spatula', 'Heavy-duty foil', 'Instant-read thermometer'],
     title: 'Grilled Salmon with Lemon-Dill Drizzle',
     category: 'Seafood',
+    season: 'Year-round',
     tagline: 'Flaky salmon, bright lemon & dill',
     summary:
       'Salmon fillets grilled skin-side down until just flaky, finished with lemon, fresh dill, and good olive oil. Foil-packet veg cooks alongside.',
@@ -261,7 +419,8 @@ export const recipes: Recipe[] = [
     slug: 'best-ribs',
     tools: ['Chimney starter', 'Long tongs', 'Spray bottle', 'Extra charcoal', 'Wood chunks (optional)'],
     title: '"Best Ribs in the Universe" — Charcoal Grove Edition',
-    category: 'Mains',
+    category: 'Pork',
+    season: 'Summer',
     tagline: 'Low-and-slow, fall-off-the-bone',
     summary:
       "Mike Scrutchfield's legendary competition rub on pork ribs, cooked low-and-slow over indirect charcoal until they're fall-off-the-bone tender.",
@@ -313,7 +472,8 @@ export const recipes: Recipe[] = [
     slug: 'strip-steak-miso-butter',
     tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer'],
     title: 'Strip Steak with Smoky Miso Butter',
-    category: 'Mains',
+    category: 'Beef',
+    season: 'Year-round',
     tagline: 'Steakhouse sear + umami butter',
     summary:
       'Strip steaks grilled over the coals and crowned with a smoky miso-paprika butter, with a crisp, peppery watercress salad to cut the richness.',
@@ -356,6 +516,7 @@ export const recipes: Recipe[] = [
     tools: ['Chimney starter', 'Fish spatula', 'Cast-iron pan or grill-top wok', 'Instant-read thermometer'],
     title: 'Grilled Yellowfin Tuna with Ponzu',
     category: 'Seafood',
+    season: 'Summer',
     tagline: 'Hard-seared, rare center, citrus ponzu',
     summary:
       'Fresh tuna seared hard over screaming coals, sliced rare, and drizzled with a quick homemade ponzu — over a farro-kale toss.',
@@ -417,6 +578,7 @@ export const recipes: Recipe[] = [
     tools: ['Cast-iron skillet or griddle', 'Spatula', 'Chimney starter'],
     title: "Mrs. Duvall's Crab Cakes",
     category: 'Seafood',
+    season: 'Summer',
     tagline: 'Light, crackery, all about the crab',
     summary:
       "Robert Duvall's mother's famous crab cakes — a light cracker binder that lets the lump crab shine — crisped on a cast-iron griddle right on the grill.",
@@ -460,6 +622,7 @@ export const recipes: Recipe[] = [
     tools: ['Heavy-duty foil', 'Long tongs', 'Instant-read thermometer'],
     title: 'Herb-Crusted Grilled Cod (Foil Packet)',
     category: 'Seafood',
+    season: 'Year-round',
     tagline: 'Lemony herb crust, fuss-free foil',
     summary:
       'Flaky cod under a lemony herb-breadcrumb crust, grilled in a foil boat with potatoes cooking right alongside — a beginner-friendly grove dinner.',
@@ -501,7 +664,8 @@ export const recipes: Recipe[] = [
     slug: 'farro-corn-salad',
     tools: ['Chimney starter', 'Long tongs', 'Sharp knife'],
     title: 'Farro Salad with Grilled Corn',
-    category: 'Sides',
+    category: 'Veggies & Sides',
+    season: 'Summer',
     tagline: 'Make-ahead crowd side',
     summary:
       'Charred sweet corn, cherry tomatoes, and parsley over nutty farro in a bright balsamic dressing — a travels-anywhere side for a crowd.',
@@ -541,7 +705,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'backyard-burgers-dogs',
     title: 'Backyard Burgers & Dogs',
-    category: 'Mains',
+    category: 'Beef',
+    season: 'Summer',
     tagline: 'The cookout classic, done right',
     summary:
       'Juicy burgers and snappy hot dogs over the coals — the everybody-happy grove cookout, with the few small tricks that keep them from drying out.',
@@ -580,7 +745,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-chicken-thighs',
     title: 'Simple Grilled Chicken Thighs',
-    category: 'Mains',
+    category: 'Poultry',
+    season: 'Year-round',
     tagline: 'Forgiving, juicy, hard to mess up',
     summary:
       'Bone-in thighs are the most forgiving thing on the grill — a quick garlic-lemon marinade and a two-zone fire are all you need. A great recipe to learn on.',
@@ -618,7 +784,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'elote-grilled-corn',
     title: 'Elote-Style Grilled Corn',
-    category: 'Sides',
+    category: 'Veggies & Sides',
+    season: 'Summer',
     tagline: 'Charred street corn',
     summary:
       'Sweet corn charred over the coals and slathered with a creamy, tangy chili-lime spread — the easiest crowd-pleaser at the grove.',
@@ -655,6 +822,7 @@ export const recipes: Recipe[] = [
     slug: 'campfire-smores',
     title: 'Campfire S’mores',
     category: 'Sweets',
+    season: 'Summer',
     tagline: 'The classic, grove-style',
     summary:
       "Once the cooking's done, those dying coals are perfect for toasting marshmallows into gooey s'mores — the kids' favorite send-off to a cookout.",
@@ -680,7 +848,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'grill-top-wok-stir-fry',
     title: 'Grill-Top Wok Stir-Fry',
-    category: 'Mains',
+    category: 'Veggies & Sides',
+    season: 'Summer',
     tagline: 'Live-fire stir-fry',
     summary:
       "A grill-top wok turns the communal grill into a roaring stir-fry station — live fire hits temperatures a home stove can't, giving veg and shrimp that smoky 'wok hei' char.",
@@ -724,7 +893,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'spatchcock-chicken',
     title: 'Spatchcock Grilled Chicken',
-    category: 'Mains',
+    category: 'Poultry',
+    season: 'Year-round',
     tagline: 'Whole bird, evenly cooked',
     summary:
       'Flatten a whole chicken (spatchcock) so it cooks evenly over indirect heat — crispy skin, juicy meat, and enough to feed the whole table.',
@@ -763,7 +933,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'reverse-sear-ribeye',
     title: 'Reverse-Sear Ribeye',
-    category: 'Mains',
+    category: 'Beef',
+    season: 'Fall',
     tagline: 'Steakhouse, edge to edge',
     summary:
       'Cook a thick ribeye gently on the cool side first, then sear it hard over the coals — edge-to-edge pink with a deep crust. The pro move for thick steaks.',
@@ -799,7 +970,8 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-pizza',
     title: 'Grilled Pizza Margherita',
-    category: 'Mains',
+    category: 'Veggies & Sides',
+    season: 'Year-round',
     tagline: 'Blistered, smoky crust',
     summary:
       'Pizza dough cooks shockingly well right on the grate — live fire blisters and chars the crust like a wood oven. Move fast and keep the toppings light.',
@@ -839,6 +1011,7 @@ export const recipes: Recipe[] = [
     slug: 'grilled-striped-bass',
     title: 'Grilled Striped Bass',
     category: 'Local Catch',
+    season: 'Summer',
     tagline: 'The prized Jersey striper',
     summary:
       'Striped bass is THE Jersey Shore catch — firm, meaty, and clean-flavored. Grilled whole or as thick fillets with lemon and herbs, it’s the best thing off the grate all summer.',
@@ -874,6 +1047,7 @@ export const recipes: Recipe[] = [
     slug: 'grilled-bluefish',
     title: 'Grilled Bluefish',
     category: 'Local Catch',
+    season: 'Summer',
     tagline: "Jersey's bold, oily catch",
     summary:
       'Bluefish is a hard-fighting local catch with rich, oily flesh that stands up to fire and bold flavor. Fresh off the boat and grilled with plenty of lemon, it’s a shore classic.',
@@ -911,6 +1085,7 @@ export const recipes: Recipe[] = [
     slug: 'grilled-fluke',
     title: 'Grilled Fluke (Summer Flounder)',
     category: 'Local Catch',
+    season: 'Summer',
     tagline: 'Delicate, in a foil boat',
     summary:
       'Fluke (summer flounder) is a prized, mild, lean local flatfish — too delicate for the bare grate, so it’s grilled in a foil boat with butter, lemon, and herbs.',
@@ -947,6 +1122,7 @@ export const recipes: Recipe[] = [
     slug: 'grilled-clams',
     title: 'Grilled Clams',
     category: 'Local Catch',
+    season: 'Summer',
     tagline: 'They pop right open',
     summary:
       'The easiest seafood on the grill: set littleneck clams right on the grate and they pop open in their own briny juice. Hit them with garlic butter — done in minutes.',
@@ -984,6 +1160,7 @@ export const recipes: Recipe[] = [
     slug: 'grilled-blue-crabs',
     title: 'Grilled Blue Crabs',
     category: 'Local Catch',
+    season: 'Summer',
     tagline: 'Old Bay & live fire',
     summary:
       'Jersey blue crabs, steamed then grilled with garlic-Old Bay butter — a messy, hands-on, only-at-the-shore feast. Steam them first, then kiss them with smoke.',
@@ -1015,6 +1192,370 @@ export const recipes: Recipe[] = [
     groveNote: 'Steam-then-grill is the move — steaming cooks them through and firms the meat; the grill adds the smoke and char. Pure Jersey Shore.',
     safety: 'Steam live crabs until bright red and fully cooked; keep them cold until cook time.',
     source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+
+  // ---- More to grill ----
+  {
+    slug: 'sausage-and-peppers',
+    title: 'Grilled Sausage & Peppers',
+    category: 'Pork',
+    season: 'Summer',
+    tagline: 'The Jersey street-fair classic',
+    summary:
+      'Sweet or hot Italian sausage charred over the coals with sweet peppers and onions — the smell of every Jersey street fair, made at the grove.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs', 'Cast-iron pan or foil tray'],
+    prepTime: '10 min',
+    cookTime: '20 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        items: [
+          '8 Italian sausages (sweet or hot)',
+          '3 bell peppers, sliced',
+          '2 onions, sliced',
+          '2 tbsp olive oil',
+          'Salt and pepper',
+          '8 sub or hoagie rolls',
+        ],
+      },
+    ],
+    steps: [
+      'Build a two-zone fire. Toss the peppers and onions with oil, salt, and pepper.',
+      'Set a cast-iron pan or foil tray over the hot zone and cook the peppers and onions, stirring, until soft and charred at the edges, ~12–15 min.',
+      'Meanwhile, grill the sausages over the medium zone, turning, until browned and 160°F inside, ~12–15 min. Slide to the cool zone if they flare.',
+      'Pile the sausage and peppers into rolls.',
+    ],
+    groveNote: 'Start the peppers first — they take longer than the sausage. A foil tray keeps them from falling through the grate.',
+    safety: 'Pork sausage: 160°F.',
+    source: 'A Jersey street-fair staple for the grove.',
+  },
+  {
+    slug: 'flank-steak-chimichurri',
+    title: 'Grilled Flank Steak with Chimichurri',
+    category: 'Beef',
+    season: 'Summer',
+    tagline: 'Fast sear, bright herb sauce',
+    summary:
+      'Flank steak takes a hot, fast sear and a sharp slice against the grain — piled with garlicky chimichurri, it feeds a crowd from one affordable cut.',
+    difficulty: 'Intermediate',
+    tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer', 'Sharp knife'],
+    prepTime: '15 min',
+    cookTime: '10 min',
+    serves: '4',
+    grillSetup: 'Hot direct zone',
+    ingredients: [
+      { group: 'Steak', items: ['1.5–2 lb flank steak', '2 tbsp olive oil', 'Salt and pepper'] },
+      {
+        group: 'Chimichurri',
+        items: [
+          '1 cup parsley, finely chopped',
+          '3 cloves garlic, minced',
+          '2 tbsp red wine vinegar',
+          '½ cup olive oil',
+          '½ tsp red pepper flakes',
+          'Salt',
+        ],
+      },
+    ],
+    steps: [
+      'Stir together all the chimichurri ingredients and let it sit while you grill (great made ahead).',
+      'Build a hot fire. Rub the steak with oil and season well.',
+      'Sear over the hot zone ~4–5 min per side to ~130°F for medium-rare. Don’t overcook a lean cut like this.',
+      'Rest 8–10 min (important for flank), then slice THIN against the grain.',
+      'Spoon chimichurri over the slices.',
+    ],
+    groveNote: 'Two rules for flank: don’t cook past medium-rare, and slice thin against the grain — that’s what keeps it tender.',
+    safety: 'Beef: USDA 145°F; 130°F is a chef’s medium-rare.',
+    source: 'A crowd-feeding cut for the grove.',
+  },
+  {
+    slug: 'grilled-chicken-wings',
+    title: 'Grilled Chicken Wings',
+    category: 'Poultry',
+    season: 'Summer',
+    tagline: 'Crispy, smoky, toss-and-go',
+    summary:
+      'Wings grilled over a two-zone fire until the skin is crackly and smoky, then tossed in the sauce of your choice — the ultimate hands-on grove snack.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer', 'Large bowl (for tossing)'],
+    prepTime: '10 min',
+    cookTime: '30 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire',
+    ingredients: [
+      {
+        items: [
+          '3 lb chicken wings, split',
+          '1 tbsp baking powder (for crisp skin)',
+          '1 tsp salt',
+          '1 tsp garlic powder',
+          '½ tsp pepper',
+          'Sauce of choice (Buffalo, BBQ, or honey-soy)',
+        ],
+      },
+    ],
+    steps: [
+      'Pat the wings very dry and toss with baking powder, salt, garlic powder, and pepper (the baking powder is the secret to crispy skin).',
+      'Build a two-zone fire. Start the wings on the COOL side, turning now and then, ~20 min, to render the fat.',
+      'Move them over the hot zone to crisp and char, ~5–10 min, watching for flare-ups.',
+      'Pull at 175°F+ (wings are best well-done), then toss hot in your sauce.',
+    ],
+    groveNote: 'Render on the cool side first, crisp on the hot side last — rushing wings over direct heat just burns the skin while the inside is raw.',
+    safety: 'Chicken: 165°F minimum; wings are best at 175–180°F.',
+    source: 'The classic grove snack.',
+  },
+  {
+    slug: 'grilled-shrimp-skewers',
+    title: 'Grilled Shrimp Skewers',
+    category: 'Seafood',
+    season: 'Summer',
+    tagline: 'Garlicky, 4 minutes, done',
+    summary:
+      'Big shrimp on skewers with garlic, lemon, and a little chili — they cook in about four minutes flat, so they’re the perfect quick app while the coals are hot.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Metal skewers', 'Long tongs'],
+    prepTime: '15 min',
+    cookTime: '5 min',
+    serves: '4',
+    grillSetup: 'Hot direct zone',
+    ingredients: [
+      {
+        items: [
+          '1.5 lb large shrimp, peeled & deveined',
+          '3 tbsp olive oil',
+          '3 cloves garlic, minced',
+          '1 lemon (juice + wedges)',
+          '½ tsp red pepper flakes',
+          'Salt and pepper',
+          'Chopped parsley',
+        ],
+      },
+    ],
+    steps: [
+      'Toss the shrimp with oil, garlic, lemon juice, pepper flakes, salt, and pepper. Thread onto metal skewers.',
+      'Build a hot fire. Grill the skewers over direct heat ~2 min per side, until the shrimp are pink and opaque — they cook fast, so don’t walk away.',
+      'Squeeze lemon over, scatter parsley, and serve right off the skewer.',
+    ],
+    groveNote: 'Shrimp go from perfect to rubbery in seconds — pull them the moment they curl and turn opaque. Metal skewers beat wood (no soaking, no burning).',
+    safety: 'Shrimp: opaque and firm (~120°F).',
+    source: 'A fast grove appetizer.',
+  },
+
+  // ---- More Local Catch (Jersey Shore) ----
+  {
+    slug: 'grilled-black-sea-bass',
+    title: 'Grilled Black Sea Bass',
+    category: 'Local Catch',
+    season: 'Summer',
+    tagline: 'Sweet, white, grilled whole',
+    summary:
+      'Black sea bass is a sweet, delicate Jersey reef fish that’s perfect grilled whole — crispy skin, flaky flesh, stuffed with lemon and herbs.',
+    difficulty: 'Intermediate',
+    tools: ['Chimney starter', 'Fish spatula', 'Instant-read thermometer'],
+    prepTime: '15 min',
+    cookTime: '18 min',
+    serves: '2',
+    grillSetup: 'Two-zone fire, well-oiled grate',
+    ingredients: [
+      {
+        items: [
+          '2 whole black sea bass (~1 lb each), scaled & gutted',
+          '3 tbsp olive oil',
+          '1 lemon, sliced',
+          'Fresh thyme & parsley',
+          '2 cloves garlic, sliced',
+          'Salt and pepper',
+        ],
+      },
+    ],
+    steps: [
+      'Score the skin of each fish a few times, brush with oil, and season inside and out. Stuff the cavities with lemon, garlic, and herbs.',
+      'Build a two-zone fire and oil the grate very well.',
+      'Grill over the medium zone ~8–9 min per side, flipping once with a fish spatula, until the skin crisps and the flesh flakes (145°F).',
+      'Rest a couple minutes and serve with more lemon.',
+    ],
+    groveNote: 'Whole fish is more forgiving than fillets — the bones and skin protect the flesh. Score the skin and oil the grate so it releases clean.',
+    safety: 'Fish: 145°F. Check NJ black sea bass size & season limits.',
+    source: 'A Jersey Shore local catch — grove-grilled.',
+  },
+  {
+    slug: 'soft-shell-crabs',
+    title: 'Grilled Soft-Shell Crabs',
+    category: 'Local Catch',
+    season: 'Summer',
+    tagline: 'A fleeting Jersey delicacy',
+    summary:
+      'Soft-shell blue crabs — eaten shell and all — are a short-season Jersey delicacy. A quick hot grill crisps them up; finish with lemon-garlic butter.',
+    difficulty: 'Advanced',
+    tools: ['Chimney starter', 'Fish spatula', 'Cast-iron pan or foil tray'],
+    prepTime: '15 min',
+    cookTime: '8 min',
+    serves: '4',
+    grillSetup: 'Hot direct zone',
+    ingredients: [
+      {
+        items: [
+          '8 cleaned soft-shell crabs',
+          '4 tbsp butter',
+          '3 cloves garlic, minced',
+          '1 lemon (juice + wedges)',
+          '2 tbsp olive oil',
+          'Salt and pepper',
+          'Chopped parsley',
+        ],
+      },
+    ],
+    steps: [
+      'Have your fishmonger clean the crabs (or clean them just before cooking). Pat very dry and brush with oil; season.',
+      'Melt the butter with garlic and lemon in a cast-iron pan on the grill.',
+      'Grill the crabs over a hot direct zone, top-shell down first, ~3–4 min per side, until crisp and bright red. They can pop and spatter — stand back.',
+      'Brush with the lemon-garlic butter, finish with parsley, and serve with lemon wedges.',
+    ],
+    groveNote: 'Soft-shells are a short-season treat — grab them when you see them. Pat them bone-dry so they crisp instead of steam, and watch for spatter.',
+    safety: 'Cook until bright red and hot through. Keep them very cold until cook time.',
+    source: 'A Jersey Shore local delicacy — grove-grilled.',
+  },
+
+  // ---- More Veggies & Sides ----
+  {
+    slug: 'grilled-asparagus',
+    title: 'Grilled Asparagus',
+    category: 'Veggies & Sides',
+    season: 'Spring',
+    tagline: 'Charred, lemony, 6 minutes',
+    summary:
+      'Spring asparagus blistered over the coals with olive oil and lemon — the fastest, freshest side of the season.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs'],
+    prepTime: '5 min',
+    cookTime: '8 min',
+    serves: '4',
+    grillSetup: 'Direct heat',
+    ingredients: [
+      {
+        items: [
+          '1 bunch asparagus, woody ends snapped off',
+          '2 tbsp olive oil',
+          'Salt and pepper',
+          '1 lemon',
+          'Grated Parmesan (optional)',
+        ],
+      },
+    ],
+    steps: [
+      'Toss the asparagus with oil, salt, and pepper.',
+      'Lay the spears across the grate (perpendicular so they don’t fall through) over direct heat.',
+      'Grill, rolling now and then, ~5–8 min until charred in spots and just tender.',
+      'Squeeze lemon over and shower with Parmesan if you like.',
+    ],
+    groveNote: 'Lay the spears across the bars so they don’t drop into the coals — or use a grill basket. Thicker spears grill better than pencil-thin ones.',
+    source: 'A fresh spring side for the grove.',
+  },
+  {
+    slug: 'foil-grilled-potatoes',
+    title: 'Foil-Packet Grilled Potatoes',
+    category: 'Veggies & Sides',
+    season: 'Year-round',
+    tagline: 'Crispy, buttery, no pot',
+    summary:
+      'Buttery, herby potatoes that cook in a foil packet right on the grate while your main grills — the no-fuss side that goes with everything.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Heavy-duty foil', 'Long tongs'],
+    prepTime: '10 min',
+    cookTime: '30 min',
+    serves: '4',
+    grillSetup: 'Two-zone fire (foil)',
+    ingredients: [
+      {
+        items: [
+          '2 lb baby potatoes, halved',
+          '3 tbsp butter or olive oil',
+          '3 cloves garlic, minced',
+          '1 tsp salt',
+          '½ tsp pepper',
+          'Fresh rosemary or thyme',
+        ],
+      },
+    ],
+    steps: [
+      'Toss the potatoes with butter/oil, garlic, salt, pepper, and herbs.',
+      'Seal them in a double layer of heavy-duty foil (one big packet or a few smaller ones).',
+      'Set over the hot zone ~25–30 min, flipping once, until tender when pierced.',
+      'Open carefully (steam!), and tip onto a platter.',
+    ],
+    groveNote: 'Double-wrap so they don’t tear, and give them a head start before the main — potatoes take longer than most things on the grill.',
+    source: 'The everything-goes-with-it side.',
+  },
+
+  // ---- More Sweets ----
+  {
+    slug: 'grilled-peaches',
+    title: 'Grilled Peaches with Ice Cream',
+    category: 'Sweets',
+    season: 'Summer',
+    tagline: 'Caramelized & jammy',
+    summary:
+      'Ripe summer peaches halved and grilled until caramelized and jammy, then topped with vanilla ice cream — the easiest showstopper dessert at the grove.',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs'],
+    prepTime: '5 min',
+    cookTime: '8 min',
+    serves: '4',
+    grillSetup: 'Medium direct heat',
+    ingredients: [
+      {
+        items: [
+          '4 ripe but firm peaches, halved & pitted',
+          '1 tbsp melted butter',
+          '1 tbsp honey or brown sugar',
+          'Vanilla ice cream',
+          'Cinnamon (optional)',
+        ],
+      },
+    ],
+    steps: [
+      'Brush the cut sides of the peaches with melted butter and a little honey.',
+      'Grill cut-side down over medium direct heat ~3–4 min, until grill marks form and they soften.',
+      'Flip and grill the skin side ~2–3 min more.',
+      'Serve warm, cut-side up, with a scoop of vanilla ice cream melting into the center.',
+    ],
+    groveNote: 'Use firm-ripe peaches — too soft and they fall apart on the grate. Cook these on the leftover heat after dinner.',
+    source: 'A summer grove dessert.',
+  },
+  {
+    slug: 'grilled-pineapple',
+    title: 'Grilled Pineapple',
+    category: 'Sweets',
+    season: 'Summer',
+    tagline: 'Caramel rings, no cleanup',
+    summary:
+      'Pineapple rings caramelize beautifully over the coals into sweet, smoky, tropical candy — a no-cleanup dessert (or a sweet side for pork and chicken).',
+    difficulty: 'Beginner',
+    tools: ['Chimney starter', 'Long tongs'],
+    prepTime: '5 min',
+    cookTime: '8 min',
+    serves: '4',
+    grillSetup: 'Medium-hot direct heat',
+    ingredients: [
+      {
+        items: [
+          '1 pineapple, peeled & cut into ½-inch rings',
+          '2 tbsp brown sugar',
+          '1 tbsp melted butter',
+          'Pinch of cinnamon or chili (optional)',
+          'Lime wedges',
+        ],
+      },
+    ],
+    steps: [
+      'Brush the pineapple rings with melted butter and dust with brown sugar.',
+      'Grill over medium-hot direct heat ~3–4 min per side, until deeply caramelized with dark grill marks.',
+      'Squeeze lime over and serve — on its own, with ice cream, or alongside grilled pork or chicken.',
+    ],
+    groveNote: 'The natural sugar does the work — just let the rings sit long enough to caramelize before flipping. Doubles as a sweet side for pork.',
+    source: 'A tropical grove sweet.',
   },
 ]
 
