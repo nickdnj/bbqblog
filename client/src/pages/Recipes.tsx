@@ -45,16 +45,18 @@ export default function Recipes() {
   const [category, setCategory] = useState<string>('All')
   const [season, setSeason] = useState<string>('All')
 
-  const shown = recipes.filter(
-    (r) => (category === 'All' || r.category === category) && (season === 'All' || r.season === season),
-  )
+  const shown = recipes
+    .filter((r) => (category === 'All' || r.category === category) && (season === 'All' || r.season === season))
+    // Lead with the local Jersey catch (stable otherwise)
+    .slice()
+    .sort((a, b) => Number(Boolean(b.local)) - Number(Boolean(a.local)))
 
   return (
     <Section id="recipes">
       <SectionHeading
         eyebrow="From the grill"
         title="Recipes for the grove"
-        subtitle="Real, tested recipes — adapted for our communal charcoal grills. Browse by what you're cooking or by season, and don't miss the Local Catch: fresh Jersey Shore fish and shellfish."
+        subtitle="Real, tested recipes — adapted for our communal charcoal grills. Browse by what you're cooking or by season. Our Seafood leads with the local catch: fresh Jersey Shore fish and shellfish."
       />
 
       <div className="space-y-4 mb-10">
@@ -79,6 +81,9 @@ export default function Recipes() {
               className="flex flex-col bg-white rounded-2xl p-7 shadow-[var(--shadow-soft)] border border-navy/8 transition-transform hover:-translate-y-1.5"
             >
               <div className="flex items-center gap-2 mb-2 flex-wrap">
+                {r.local && (
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-navy text-white">🎣 Jersey local</span>
+                )}
                 <span className="text-xs font-semibold uppercase tracking-wide text-navy">{r.category}</span>
                 <span className="text-xs text-muted">· {r.season}</span>
                 <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${difficultyColor[r.difficulty]}`}>

@@ -291,8 +291,9 @@ export const rules: RuleCard[] = [
   },
 ]
 
-// Grilling food-type categories (Local Catch = Jersey Shore catches, front and center).
-export const RECIPE_CATEGORIES = ['Beef', 'Pork', 'Poultry', 'Seafood', 'Local Catch', 'Veggies & Sides', 'Sweets'] as const
+// Grilling food-type categories. Local Jersey Shore catches live under Seafood
+// (flagged `local: true`) and lead that category.
+export const RECIPE_CATEGORIES = ['Beef', 'Pork', 'Poultry', 'Seafood', 'Veggies & Sides', 'Sweets'] as const
 export type RecipeCategory = (typeof RECIPE_CATEGORIES)[number]
 
 export const RECIPE_SEASONS = ['Spring', 'Summer', 'Fall', 'Year-round'] as const
@@ -305,6 +306,7 @@ export type Recipe = {
   title: string
   category: RecipeCategory
   season: RecipeSeason
+  local?: boolean
   tagline: string
   summary: string
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
@@ -414,6 +416,45 @@ export const recipes: Recipe[] = [
     groveNote: 'Skin-side-down the whole time on a well-oiled grate = an easy, clean release with no sticking.',
     safety: 'Fish: 145°F (flakes easily with a fork).',
     source: "From Nick's recipe box — adapted for the charcoal grove.",
+  },
+  {
+    slug: 'cedar-plank-salmon',
+    title: 'Cedar-Plank Salmon',
+    category: 'Seafood',
+    season: 'Year-round',
+    tagline: 'Smoky, no-stick, on a plank',
+    summary:
+      'A soaked cedar plank turns the grill into a little smoker — the salmon never touches the grate, stays moist, and drinks up sweet cedar smoke. Works just as well for local bluefish.',
+    difficulty: 'Intermediate',
+    tools: ['Cedar grilling plank', 'Chimney starter', 'Long tongs', 'Instant-read thermometer'],
+    prepTime: '15 min + 1 hr soak',
+    cookTime: '15 min',
+    serves: '4',
+    grillSetup: 'Two-zone / indirect',
+    ingredients: [
+      {
+        items: [
+          '1 untreated cedar grilling plank',
+          '4 salmon fillets (about 6 oz each)',
+          '2 tbsp olive oil or melted butter',
+          '1 lemon, sliced',
+          '2 cloves garlic, minced',
+          'Fresh dill',
+          'Salt and pepper',
+          '1 tbsp maple syrup or brown sugar (optional glaze)',
+        ],
+      },
+    ],
+    steps: [
+      'Soak the cedar plank in water at least 1 hour (weight it down so it stays under). A soaked plank smokes instead of burning — don’t skip this.',
+      'Build a two-zone fire. Pat the salmon dry, rub with oil, and season. Lay lemon slices and dill on the plank and set the fillets on top; brush with maple or sprinkle brown sugar if you like.',
+      'Set the plank over the medium / indirect zone and cover with a dome (or loose foil). Cook ~12–15 min — no flipping — until the salmon flakes and reaches 145°F.',
+      'The plank edges will char and smoke; if it actually flares up, mist with water. Serve right off the plank.',
+    ],
+    groveNote:
+      'Soak the plank or it just burns. The fish never touches the grate, so there’s no sticking and no flip. Swap in local bluefish — its oily flesh loves cedar smoke.',
+    safety: 'Fish: 145°F. Use food-safe untreated cedar grilling planks only — never construction lumber.',
+    source: 'A cedar-plank classic for the grove.',
   },
   {
     slug: 'best-ribs',
@@ -572,50 +613,6 @@ export const recipes: Recipe[] = [
     groveNote: 'A blazing hot zone is everything here — sear fast and keep the middle rare.',
     safety: 'Tuna is served rare — use sushi-grade and keep it cold until it hits the grate.',
     source: "From Nick's recipe box — adapted for the charcoal grove.",
-  },
-  {
-    slug: 'crab-cakes',
-    tools: ['Cast-iron skillet or griddle', 'Spatula', 'Chimney starter'],
-    title: "Mrs. Duvall's Crab Cakes",
-    category: 'Seafood',
-    season: 'Summer',
-    tagline: 'Light, crackery, all about the crab',
-    summary:
-      "Robert Duvall's mother's famous crab cakes — a light cracker binder that lets the lump crab shine — crisped on a cast-iron griddle right on the grill.",
-    difficulty: 'Intermediate',
-    prepTime: '20 min + 1 hr chill',
-    cookTime: '6 min',
-    serves: '4',
-    grillSetup: 'Cast-iron / griddle on the grate',
-    ingredients: [
-      {
-        items: [
-          '¼ cup mayonnaise',
-          '¼ cup minced onion',
-          '2 large eggs, lightly beaten',
-          '½ tsp Worcestershire sauce',
-          '½ tsp dry mustard',
-          '¼ tsp salt',
-          '¼ tsp cayenne pepper',
-          '1 lb lump crabmeat, picked over for shell',
-          '1 cup finely crushed soda crackers (divided)',
-          '2 tbsp unsalted butter, divided',
-          '¼ cup vegetable oil, divided',
-          'Lemon wedges, to serve',
-        ],
-      },
-    ],
-    steps: [
-      'Combine mayo, onion, eggs, Worcestershire, dry mustard, salt, and cayenne. Gently fold in the crab and ¼ cup of the cracker crumbs — don’t overmix. Shape into 16 cakes about 1 inch thick.',
-      'Coat the cakes in the remaining crumbs, set on a tray, and chill 1 hour (firming them up is what keeps them together on the grill).',
-      'Set a cast-iron skillet or flat griddle on the grate over a medium-hot zone; add 1 tbsp butter + 2 tbsp oil and let it shimmer.',
-      'Cook the cakes in batches until golden and crisp, ~2–3 min per side. Drain on paper towels; keep warm at the cooler edge of the grate. Repeat with the rest.',
-      'Serve hot with lemon wedges.',
-    ],
-    groveNote:
-      'A cast-iron pan turns the communal grill into a flat-top — perfect for delicate cakes that would fall through the grate. Chill them firm first.',
-    safety: 'Cook until golden and hot through (160°F).',
-    source: "Adapted from Robert Duvall's mother's recipe — for the charcoal grove.",
   },
   {
     slug: 'herb-crusted-cod',
@@ -1010,8 +1007,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-striped-bass',
     title: 'Grilled Striped Bass',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'The prized Jersey striper',
     summary:
       'Striped bass is THE Jersey Shore catch — firm, meaty, and clean-flavored. Grilled whole or as thick fillets with lemon and herbs, it’s the best thing off the grate all summer.',
@@ -1046,8 +1044,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-bluefish',
     title: 'Grilled Bluefish',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: "Jersey's bold, oily catch",
     summary:
       'Bluefish is a hard-fighting local catch with rich, oily flesh that stands up to fire and bold flavor. Fresh off the boat and grilled with plenty of lemon, it’s a shore classic.',
@@ -1084,8 +1083,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-fluke',
     title: 'Grilled Fluke (Summer Flounder)',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'Delicate, in a foil boat',
     summary:
       'Fluke (summer flounder) is a prized, mild, lean local flatfish — too delicate for the bare grate, so it’s grilled in a foil boat with butter, lemon, and herbs.',
@@ -1121,8 +1121,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-clams',
     title: 'Grilled Clams',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'They pop right open',
     summary:
       'The easiest seafood on the grill: set littleneck clams right on the grate and they pop open in their own briny juice. Hit them with garlic butter — done in minutes.',
@@ -1159,8 +1160,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-blue-crabs',
     title: 'Grilled Blue Crabs',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'Old Bay & live fire',
     summary:
       'Jersey blue crabs, steamed then grilled with garlic-Old Bay butter — a messy, hands-on, only-at-the-shore feast. Steam them first, then kiss them with smoke.',
@@ -1347,8 +1349,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'grilled-black-sea-bass',
     title: 'Grilled Black Sea Bass',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'Sweet, white, grilled whole',
     summary:
       'Black sea bass is a sweet, delicate Jersey reef fish that’s perfect grilled whole — crispy skin, flaky flesh, stuffed with lemon and herbs.',
@@ -1383,8 +1386,9 @@ export const recipes: Recipe[] = [
   {
     slug: 'soft-shell-crabs',
     title: 'Grilled Soft-Shell Crabs',
-    category: 'Local Catch',
+    category: 'Seafood',
     season: 'Summer',
+    local: true,
     tagline: 'A fleeting Jersey delicacy',
     summary:
       'Soft-shell blue crabs — eaten shell and all — are a short-season Jersey delicacy. A quick hot grill crisps them up; finish with lemon-garlic butter.',
@@ -1630,7 +1634,7 @@ export const tools: Tool[] = [
     emoji: '🍳',
     essential: false,
     what: 'Turns the grate into a flat-top for smashburgers, crab cakes, eggs, and anything that would fall through the bars.',
-    tip: 'Used in: Crab Cakes, Grilled Clams, Grilled Pizza.',
+    tip: 'Used in: Grilled Clams, Grilled Pizza, soft-shell crabs.',
   },
   {
     name: 'Grill-Top Wok',
@@ -1644,7 +1648,7 @@ export const tools: Tool[] = [
     emoji: '🐟',
     essential: false,
     what: 'A thin, flexible blade slides under delicate fish for a clean flip without tearing.',
-    tip: 'Used in: every Local Catch fish recipe.',
+    tip: 'Used in: every grilled-fish recipe.',
   },
   {
     name: 'Metal Skewers',

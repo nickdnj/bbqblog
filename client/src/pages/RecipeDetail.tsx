@@ -29,7 +29,9 @@ export default function RecipeDetail() {
       <div className="bg-gradient-to-br from-navy to-navy-dark text-white py-14">
         <Container>
           <Link to="/recipes" className="text-seafoam text-sm font-semibold">← Recipes</Link>
-          <p className="mt-4 text-xs uppercase tracking-[0.12em] font-semibold text-seafoam">{recipe.category} · {recipe.season}</p>
+          <p className="mt-4 text-xs uppercase tracking-[0.12em] font-semibold text-seafoam">
+            {recipe.local && '🎣 Jersey local · '}{recipe.category} · {recipe.season}
+          </p>
           <h1 className="mt-2 text-3xl sm:text-4xl text-white">{recipe.title}</h1>
           <p className="mt-3 text-white/85 max-w-2xl">{recipe.summary}</p>
         </Container>
