@@ -10,7 +10,6 @@ const navLinks = [
   { to: '/recipes', label: 'Recipes' },
   { to: '/tools', label: 'Tools' },
   { to: '/blog', label: 'Blog' },
-  { to: '/reserve', label: 'Reserve' },
 ]
 
 export default function Layout() {

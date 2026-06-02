@@ -10,7 +10,6 @@ const highlights = [
   { to: '/rules', emoji: '📋', title: 'Rules', text: 'Picnic, grill, fire-safety, and cleanup rules everyone follows.' },
   { to: '/recipes', emoji: '🌽', title: 'Recipes', text: 'Real grill recipes — mains, Jersey local catch, sides & sweets.' },
   { to: '/tools', emoji: '🧰', title: 'Tools', text: 'What to bring: chimney starter, cast iron, and the rest of the gear.' },
-  { to: '/reserve', emoji: '📅', title: 'Reserve a Grill', text: 'Planning a bigger gathering? Request a grill slot.' },
 ]
 
 export default function Home() {
@@ -33,7 +32,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link to="/start" className={btnPrimary}>Start grilling in 6 steps</Link>
-              <Link to="/reserve" className={btnGhost}>Reserve a grill</Link>
+              <Link to="/recipes" className={btnGhost}>Browse the recipes</Link>
             </div>
           </div>
           <aside className="bg-white/10 backdrop-blur rounded-2xl p-8 shadow-[var(--shadow-soft)]">

@@ -15,8 +15,8 @@ export type Step = { num: number; title: string; body: string; checklist?: strin
 export const steps: Step[] = [
   {
     num: 1,
-    title: 'Plan & reserve',
-    body: 'The grills are first-come for small groups. Hosting 12 or more? Reserve ahead so a spot is waiting for you, and skim the picnic rules once before you go.',
+    title: 'Plan ahead',
+    body: 'The grills are first-come, first-served. Hosting a big group (12 or more)? Give the HOA office a heads-up, and skim the picnic rules once before you go.',
     tip: 'Pick a spot with the wind at your back — it makes lighting easier.',
   },
   {
@@ -85,9 +85,9 @@ export type RuleCard = { title: string; items: string[] }
 
 export const rules: RuleCard[] = [
   {
-    title: 'General conduct & reservations',
+    title: 'General conduct & groups',
     items: [
-      'Reserve your grill slot in advance for groups over 12; gatherings of 50+ require Board approval 7 days prior.',
+      'Grills are first-come, first-served. For groups over 12, give the HOA office a heads-up; gatherings of 50+ require Board approval 7 days prior.',
       'Arrive on time and limit sessions to 2 hours when others are waiting.',
       'No alcohol, controlled substances, glass bottles, or fireworks in the picnic area.',
       'Keep music to conversational levels; amplification needs HOA sign-off.',

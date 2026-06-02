@@ -11,7 +11,6 @@ import Rules from './pages/Rules'
 import Recipes from './pages/Recipes'
 import RecipeDetail from './pages/RecipeDetail'
 import Tools from './pages/Tools'
-import Reserve from './pages/Reserve'
 import Blog from './pages/Blog'
 import Post from './pages/Post'
 import NotFound from './pages/NotFound'
@@ -43,7 +42,6 @@ const router = createBrowserRouter([
       { path: '/recipes', element: <Recipes /> },
       { path: '/recipes/:slug', element: <RecipeDetail /> },
       { path: '/tools', element: <Tools /> },
-      { path: '/reserve', element: <Reserve /> },
       { path: '/blog', element: <Blog /> },
       { path: '/blog/:slug', element: <Post /> },
       { path: '*', element: <NotFound /> },
