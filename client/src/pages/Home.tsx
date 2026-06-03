@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Container, Section, btnPrimary, btnGhost } from '../components/ui'
 import { quickFacts } from '../data/content'
 import LatestPosts from '../components/LatestPosts'
+import InstallGuide from '../components/InstallGuide'
 
 const highlights = [
   { to: '/start', emoji: '🔥', title: 'Start Here', text: 'Never grilled on charcoal? Your first cookout in 6 simple steps.' },
@@ -54,6 +55,7 @@ export default function Home() {
 
       {/* Section highlights */}
       <Section tone="alt">
+        <InstallGuide />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {highlights.map((h) => (
             <Link
