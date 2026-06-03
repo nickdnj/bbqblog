@@ -113,7 +113,7 @@ export default function School() {
         dark
         eyebrow="Watch & Learn"
         title="Bob's Grill School"
-        subtitle="Our neighbor Bob walks you through it on camera — short, friendly how-tos shot right here at the grove. New episodes drop through the season. Got a question for Bob? Mention it to the HOA office."
+        subtitle="Our neighbor Bob walks you through it on camera — short, friendly how-tos shot right here at the picnic area. New episodes drop through the season. Got a question for Bob? Mention it to the HOA office."
       />
 
       <LightingMethods />

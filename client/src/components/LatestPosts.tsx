@@ -26,7 +26,7 @@ export default function LatestPosts({ limit = 3 }: { limit?: number }) {
   if (posts.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-navy/20 p-8 text-center text-muted">
-        No posts yet — news, tips, and event recaps from the grove will appear here.
+        No posts yet — news, tips, and event recaps from the picnic area will appear here.
       </div>
     )
   }

@@ -48,10 +48,10 @@ export default function RecipeDetail() {
           ))}
         </div>
 
-        {recipe.groveNote && (
+        {recipe.areaNote && (
           <div className="flex gap-3 items-start mb-8 bg-white border border-navy/10 border-l-4 border-l-seafoam rounded-xl p-5 shadow-[var(--shadow-soft)]">
             <span className="text-2xl leading-none" aria-hidden>🔥</span>
-            <p className="text-slate"><strong>At the grove:</strong> {recipe.groveNote}</p>
+            <p className="text-slate"><strong>At the picnic area:</strong> {recipe.areaNote}</p>
           </div>
         )}
 

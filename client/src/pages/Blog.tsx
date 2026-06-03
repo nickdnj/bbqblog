@@ -25,9 +25,9 @@ export default function Blog() {
   return (
     <Section id="blog">
       <SectionHeading
-        eyebrow="From the grove"
-        title="Picnic grove news, tips & recaps"
-        subtitle="Event announcements, grilling tips, and recaps from your neighbors at the Wharfside picnic grove."
+        eyebrow="From the picnic area"
+        title="Picnic area news, tips & recaps"
+        subtitle="Event announcements, grilling tips, and recaps from your neighbors at the Wharfside picnic area."
       />
 
       <div className="flex justify-center gap-3 flex-wrap mb-10">

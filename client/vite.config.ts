@@ -15,7 +15,7 @@ export default defineConfig({
         name: 'Wharfside Picnic Guide',
         short_name: 'Picnic Guide',
         description:
-          "Wharfside Manor's guide to grilling at the waterfront picnic grove — rules, how-tos, recipes, and community news.",
+          "Wharfside Manor's guide to grilling at the waterfront picnic area — rules, how-tos, recipes, and community news.",
         theme_color: '#0b2c42',
         background_color: '#f9fafb',
         display: 'standalone',

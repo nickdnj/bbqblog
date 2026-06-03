@@ -5,8 +5,8 @@ import LatestPosts from '../components/LatestPosts'
 
 const highlights = [
   { to: '/start', emoji: '🔥', title: 'Start Here', text: 'Never grilled on charcoal? Your first cookout in 6 simple steps.' },
-  { to: '/grills', emoji: '🛠️', title: 'Our Grills', text: 'Meet the Kay Park SF163.5 — the commercial park grills in our grove.' },
-  { to: '/school', emoji: '🎬', title: "Bob's School", text: 'Short how-to videos shot right here at the grove.' },
+  { to: '/grills', emoji: '🛠️', title: 'Our Grills', text: 'Meet the Kay Park SF163.5 — the commercial park grills in our picnic area.' },
+  { to: '/school', emoji: '🎬', title: "Bob's School", text: 'Short how-to videos shot right here at the picnic area.' },
   { to: '/rules', emoji: '📋', title: 'Rules', text: 'Picnic, grill, fire-safety, and cleanup rules everyone follows.' },
   { to: '/recipes', emoji: '🌽', title: 'Recipes', text: 'Real grill recipes — mains, Jersey local catch, sides & sweets.' },
   { to: '/tools', emoji: '🧰', title: 'Tools', text: 'What to bring: chimney starter, cast iron, and the rest of the gear.' },
@@ -26,7 +26,7 @@ export default function Home() {
               Never grilled on charcoal? You're in the right place.
             </h1>
             <p className="mt-4 text-white/85 text-lg">
-              Our picnic grove just reopened with new tables and 11 community charcoal grills. If the only grill you've
+              Our picnic area just reopened with new tables and 11 community charcoal grills. If the only grill you've
               used is the gas one at home, don't sweat it — this guide takes you from "I've never lit charcoal" to
               flipping burgers by the water, one simple step at a time.
             </p>
@@ -74,7 +74,7 @@ export default function Home() {
       <Section>
         <div className="flex items-end justify-between mb-8 flex-wrap gap-3">
           <div>
-            <p className="uppercase tracking-[0.1em] text-xs font-semibold text-seafoam mb-2">From the grove</p>
+            <p className="uppercase tracking-[0.1em] text-xs font-semibold text-seafoam mb-2">From the picnic area</p>
             <h2 className="text-3xl text-navy-dark">Latest news & tips</h2>
           </div>
           <Link to="/blog" className="font-semibold text-navy">View all posts →</Link>

@@ -78,7 +78,7 @@ export default function Layout() {
           <div>
             <h2 className="text-white font-display text-lg">Stay connected</h2>
             <p className="mt-2 text-sm">
-              Wharfside Manor Condominium Association · 146 Wharfside Dr · Monmouth Beach, NJ 07750 · HOA Office {HOA_PHONE}
+              Wharfside Manor Condominium Association · Monmouth Beach, NJ · HOA Office {HOA_PHONE}
             </p>
             <p className="mt-2 text-sm font-semibold">Emergency: Dial 911 first, then contact the HOA office.</p>
           </div>
@@ -93,9 +93,9 @@ export default function Layout() {
             </ul>
           </div>
           <div>
-            <h3 className="text-white font-display">Wharfside Picnic Grove</h3>
+            <h3 className="text-white font-display">Wharfside Picnic Area</h3>
             <p className="mt-2 text-sm">
-              The community guide to grilling at the waterfront grove — install it to your home screen for the rules,
+              The community guide to grilling at the waterfront picnic area — install it to your home screen for the rules,
               how-tos, and recipes anytime.
             </p>
           </div>

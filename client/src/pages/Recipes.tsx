@@ -55,7 +55,7 @@ export default function Recipes() {
     <Section id="recipes">
       <SectionHeading
         eyebrow="From the grill"
-        title="Recipes for the grove"
+        title="Recipes for the picnic area"
         subtitle="Real, tested recipes — adapted for our communal charcoal grills. Browse by what you're cooking or by season. Our Seafood leads with the local catch: fresh Jersey Shore fish and shellfish."
       />
 

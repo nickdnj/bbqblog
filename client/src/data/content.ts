@@ -195,7 +195,7 @@ export const episodes: Episode[] = [
     storyboard: {
       objective: 'Show the right way to shut down a communal grill: let coals go fully cold, dispose of cold ash in the metal bins, scrub the grate, leave it better than you found it.',
       beats: [
-        { time: '0:00–0:10', shot: 'Bob at a grill after cooking', script: '“Cooking’s done — but you’re not. This part keeps the grove nice for everybody.”' },
+        { time: '0:00–0:10', shot: 'Bob at a grill after cooking', script: '“Cooking’s done — but you’re not. This part keeps the picnic area nice for everybody.”' },
         { time: '0:10–0:40', shot: 'Coals burning down; clock/sun graphic for time passing', script: '“Let the coals burn all the way down and go COLD. That can take a couple hours — never scoop warm ash.”' },
         { time: '0:40–1:10', shot: 'Scooping cold ash into the covered metal bin', script: '“Cold ash goes in the metal bins — only the metal bins. Never the trash, never the dunes.”' },
         { time: '1:10–1:40', shot: 'Scrubbing the grate; wiping the shelf; bagging trash', script: '“Quick scrub of the grate, wipe the shelf, bag your trash.”' },
@@ -220,11 +220,11 @@ export const grillSpecs: [string, string][] = [
 ]
 
 // Photo slots for the Grills page. Drop a file in client/public/photos/ and set `src`
-// (e.g. '/photos/grove.jpg'); until then each shows a captioned placeholder of the shot to take.
+// (e.g. '/photos/area.jpg'); until then each shows a captioned placeholder of the shot to take.
 export type GrillPhoto = { caption: string; shot: string; src?: string }
 
 export const grillPhotos: GrillPhoto[] = [
-  { caption: 'The picnic grove', shot: 'Wide shot of the grove — grills + new picnic tables, water behind.' },
+  { caption: 'The picnic area', shot: 'Wide shot of the area — grills + new picnic tables, water behind.' },
   { caption: 'A grill, head-on', shot: 'One Kay Park SF163.5 on its pedestal, clean, utility shelf visible.' },
   { caption: 'The flip-back grate', shot: 'Close-up of the grate flipped up on its hinge — the ½″ rods.' },
   { caption: 'Pedestal & shelf', shot: 'The 3½″ galvanized pedestal in its concrete pad + the bolt-on shelf.' },
@@ -317,14 +317,14 @@ export type Recipe = {
   grillSetup: string
   ingredients: IngredientGroup[]
   steps: string[]
-  groveNote?: string
+  areaNote?: string
   tips?: string[]
   safety?: string
   source: string
 }
 
 // These are Nick's own recipes (from his recipe collection), adapted for the
-// communal Kay Park charcoal grills at the grove — two-zone fires, foil packets,
+// communal Kay Park charcoal grills at the picnic area — two-zone fires, foil packets,
 // and cast-iron on the grate instead of a home stove/oven.
 export const recipes: Recipe[] = [
   {
@@ -365,7 +365,7 @@ export const recipes: Recipe[] = [
       },
     ],
     steps: [
-      'Make the farro ahead at home: simmer ½ cup farro in salted water or broth ~25 min until tender, drain, and chill. (Grains are far easier done in advance than at the grove.)',
+      'Make the farro ahead at home: simmer ½ cup farro in salted water or broth ~25 min until tender, drain, and chill. (Grains are far easier done in advance than at the picnic area.)',
       'Build a two-zone fire — bank the lit coals to one side for a hot zone, leaving a cooler zone to dodge flare-ups.',
       'Toss the cooked farro with cherry tomatoes, Parmesan, parsley, lemon juice + zest, and a drizzle of olive oil. Season and set aside.',
       'Pat the chops dry, rub with oil, and season generously. Sear over the hot zone ~4–5 min per side, sliding to the cooler zone if fat flares.',
@@ -373,9 +373,9 @@ export const recipes: Recipe[] = [
       'While they rest, set a cast-iron pan or foil tray on the hot grate with a little oil + garlic; toss the greens until just wilted, ~2 min.',
       'Plate the chops with the farro salad and charred greens; extra parsley if you like.',
     ],
-    groveNote: 'No farro? Any cooked grain — or even a bag of slaw — works. The chops are the star.',
+    areaNote: 'No farro? Any cooked grain — or even a bag of slaw — works. The chops are the star.',
     safety: 'Pork: pull at 145°F with a 3-minute rest.',
-    source: "From Nick's recipe box — adapted for the charcoal grove.",
+    source: "From Nick's recipe box — adapted for the charcoal grills.",
   },
   {
     slug: 'grilled-salmon',
@@ -413,9 +413,9 @@ export const recipes: Recipe[] = [
       'Foil-packet veg: toss broccoli + carrots with oil, garlic, and salt; seal in foil and set over the hot zone ~10 min, shaking once.',
       'Off the heat, squeeze lemon over the salmon and scatter with dill and zest.',
     ],
-    groveNote: 'Skin-side-down the whole time on a well-oiled grate = an easy, clean release with no sticking.',
+    areaNote: 'Skin-side-down the whole time on a well-oiled grate = an easy, clean release with no sticking.',
     safety: 'Fish: 145°F (flakes easily with a fork).',
-    source: "From Nick's recipe box — adapted for the charcoal grove.",
+    source: "From Nick's recipe box — adapted for the charcoal grills.",
   },
   {
     slug: 'cedar-plank-salmon',
@@ -451,15 +451,15 @@ export const recipes: Recipe[] = [
       'Set the plank over the medium / indirect zone and cover with a dome (or loose foil). Cook ~12–15 min — no flipping — until the salmon flakes and reaches 145°F.',
       'The plank edges will char and smoke; if it actually flares up, mist with water. Serve right off the plank.',
     ],
-    groveNote:
+    areaNote:
       'Soak the plank or it just burns. The fish never touches the grate, so there’s no sticking and no flip. Swap in local bluefish — its oily flesh loves cedar smoke.',
     safety: 'Fish: 145°F. Use food-safe untreated cedar grilling planks only — never construction lumber.',
-    source: 'A cedar-plank classic for the grove.',
+    source: 'A cedar-plank classic for the picnic area.',
   },
   {
     slug: 'best-ribs',
     tools: ['Chimney starter', 'Long tongs', 'Spray bottle', 'Extra charcoal', 'Wood chunks (optional)'],
-    title: '"Best Ribs in the Universe" — Charcoal Grove Edition',
+    title: '"Best Ribs in the Universe" — Charcoal Grill Edition',
     category: 'Pork',
     season: 'Summer',
     tagline: 'Low-and-slow, fall-off-the-bone',
@@ -504,10 +504,10 @@ export const recipes: Recipe[] = [
       'Last 15 min: brush with BBQ sauce and move briefly over the coals to set the glaze — watch closely for flare-ups.',
       'Rest 10 min, then slice between the bones.',
     ],
-    groveNote:
+    areaNote:
       'This is a half-day project — bring extra charcoal and plan ~4 hours. Worth every minute. (Have a sous vide at home? Nick’s original does 165°F for 12h first, then this charcoal finish.)',
     safety: 'Ribs are done by feel (~195–203°F internal) — well past the 145°F safe minimum for pork.',
-    source: 'Rub from Mike Scrutchfield’s "Best Ribs in the Universe"; charcoal method adapted for the grove.',
+    source: 'Rub from Mike Scrutchfield’s "Best Ribs in the Universe"; charcoal method adapted for the picnic area.',
   },
   {
     slug: 'strip-steak-miso-butter',
@@ -548,9 +548,9 @@ export const recipes: Recipe[] = [
       'Whisk rice vinegar, soy sauce, and sesame seeds; toss the watercress and scallions in it.',
       'Top the rested steaks with a knob of miso butter and slice against the grain over the dressed salad.',
     ],
-    groveNote: 'Make the miso butter at home and keep it cold — it melts into the steak the second it lands.',
+    areaNote: 'Make the miso butter at home and keep it cold — it melts into the steak the second it lands.',
     safety: 'USDA medium for beef is 145°F; the 120–125°F pull is a chef’s medium-rare — your call.',
-    source: "From Nick's recipe box — adapted for the charcoal grove.",
+    source: "From Nick's recipe box — adapted for the charcoal grills.",
   },
   {
     slug: 'yellowfin-tuna-ponzu',
@@ -610,9 +610,9 @@ export const recipes: Recipe[] = [
       'In a cast-iron pan or foil tray on the hot grate, sauté garlic, ginger, and the white scallion parts ~30 sec; add carrots 2–3 min, then kale until wilted; stir in the farro, soy, and rice vinegar.',
       'Plate the farro-kale, fan the tuna on top, drizzle with ponzu, and garnish with green scallion + sesame. Lime wedges on the side.',
     ],
-    groveNote: 'A blazing hot zone is everything here — sear fast and keep the middle rare.',
+    areaNote: 'A blazing hot zone is everything here — sear fast and keep the middle rare.',
     safety: 'Tuna is served rare — use sushi-grade and keep it cold until it hits the grate.',
-    source: "From Nick's recipe box — adapted for the charcoal grove.",
+    source: "From Nick's recipe box — adapted for the charcoal grills.",
   },
   {
     slug: 'herb-crusted-cod',
@@ -622,7 +622,7 @@ export const recipes: Recipe[] = [
     season: 'Year-round',
     tagline: 'Lemony herb crust, fuss-free foil',
     summary:
-      'Flaky cod under a lemony herb-breadcrumb crust, grilled in a foil boat with potatoes cooking right alongside — a beginner-friendly grove dinner.',
+      'Flaky cod under a lemony herb-breadcrumb crust, grilled in a foil boat with potatoes cooking right alongside — a beginner-friendly picnic-area dinner.',
     difficulty: 'Beginner',
     prepTime: '15 min',
     cookTime: '15 min',
@@ -653,9 +653,9 @@ export const recipes: Recipe[] = [
       'Toss the mixed greens with olive oil, balsamic, salt, and pepper.',
       'Plate the cod with the foil potatoes and greens; squeeze lemon over the top.',
     ],
-    groveNote: 'Foil boats keep delicate fish from sticking or falling through the grate — and the potatoes cook right alongside.',
+    areaNote: 'Foil boats keep delicate fish from sticking or falling through the grate — and the potatoes cook right alongside.',
     safety: 'Fish: 145°F (flakes easily).',
-    source: "From Nick's recipe box — adapted for the charcoal grove.",
+    source: "From Nick's recipe box — adapted for the charcoal grills.",
   },
   {
     slug: 'farro-corn-salad',
@@ -694,7 +694,7 @@ export const recipes: Recipe[] = [
       'Add the warm farro and toss; let it cool. Fold in the grilled corn, tomatoes, and parsley. Season with salt and pepper.',
       'Best made up to a day ahead and chilled — bring to room temperature before serving for the fullest flavor.',
     ],
-    groveNote: 'The whole bowl travels great — grill the corn at the grove, or make the entire thing at home and just carry it down.',
+    areaNote: 'The whole bowl travels great — grill the corn at the picnic area, or make the entire thing at home and just carry it down.',
     source: "From Nick's recipe box.",
   },
 
@@ -706,7 +706,7 @@ export const recipes: Recipe[] = [
     season: 'Summer',
     tagline: 'The cookout classic, done right',
     summary:
-      'Juicy burgers and snappy hot dogs over the coals — the everybody-happy grove cookout, with the few small tricks that keep them from drying out.',
+      'Juicy burgers and snappy hot dogs over the coals — the everybody-happy cookout, with the few small tricks that keep them from drying out.',
     difficulty: 'Beginner',
     tools: ['Chimney starter', 'Spatula', 'Long tongs', 'Instant-read thermometer'],
     prepTime: '10 min',
@@ -734,10 +734,10 @@ export const recipes: Recipe[] = [
       'Toast the buns cut-side down over the cooler zone for the last 30–60 seconds.',
       'Build and dress to taste.',
     ],
-    groveNote:
+    areaNote:
       'Flip burgers ONCE — pressing and flipping squeezes the juices out. The center dimple keeps them from puffing into meatballs.',
     safety: 'Ground beef: 160°F. Hot dogs: heated through.',
-    source: 'Cookout basics for the grove.',
+    source: 'Cookout basics for the picnic area.',
   },
   {
     slug: 'grilled-chicken-thighs',
@@ -774,9 +774,9 @@ export const recipes: Recipe[] = [
       'Pull at 175°F — dark meat is juiciest a little past the 165°F minimum.',
       'Rest 5 minutes before serving.',
     ],
-    groveNote: 'Thighs forgive overcooking far better than breasts — render skin-up first, crisp skin-down last.',
+    areaNote: 'Thighs forgive overcooking far better than breasts — render skin-up first, crisp skin-down last.',
     safety: 'Chicken: 165°F minimum; thighs are best at ~175°F.',
-    source: 'A beginner-friendly staple for the grove.',
+    source: 'A beginner-friendly staple for the picnic area.',
   },
   {
     slug: 'elote-grilled-corn',
@@ -785,7 +785,7 @@ export const recipes: Recipe[] = [
     season: 'Summer',
     tagline: 'Charred street corn',
     summary:
-      'Sweet corn charred over the coals and slathered with a creamy, tangy chili-lime spread — the easiest crowd-pleaser at the grove.',
+      'Sweet corn charred over the coals and slathered with a creamy, tangy chili-lime spread — the easiest crowd-pleaser at the picnic area.',
     difficulty: 'Beginner',
     tools: ['Chimney starter', 'Long tongs'],
     prepTime: '10 min',
@@ -812,15 +812,15 @@ export const recipes: Recipe[] = [
       'Slather the hot corn with the spread, then sprinkle with the remaining cotija, a dusting of chili powder, and cilantro.',
       'Serve with lime wedges.',
     ],
-    groveNote: 'No lid needed — just keep the corn moving over direct heat until it chars.',
-    source: 'A grove crowd-pleaser.',
+    areaNote: 'No lid needed — just keep the corn moving over direct heat until it chars.',
+    source: 'A picnic-area crowd-pleaser.',
   },
   {
     slug: 'campfire-smores',
     title: 'Campfire S’mores',
     category: 'Sweets',
     season: 'Summer',
-    tagline: 'The classic, grove-style',
+    tagline: 'The classic, picnic-area style',
     summary:
       "Once the cooking's done, those dying coals are perfect for toasting marshmallows into gooey s'mores — the kids' favorite send-off to a cookout.",
     difficulty: 'Beginner',
@@ -836,7 +836,7 @@ export const recipes: Recipe[] = [
       'Sandwich the hot marshmallow and a square of chocolate between two graham crackers; press gently to melt.',
       'Wait a few seconds for the chocolate to soften, then enjoy.',
     ],
-    groveNote: 'Use the LEFTOVER coals — no need to light more. Keep little hands back from the grill and supervise the skewers.',
+    areaNote: 'Use the LEFTOVER coals — no need to light more. Keep little hands back from the grill and supervise the skewers.',
     safety: 'Coals stay hot for hours — keep kids at arm’s length and use long skewers.',
     source: 'The classic campfire treat.',
   },
@@ -882,10 +882,10 @@ export const recipes: Recipe[] = [
       'Add the hard veg first (carrots, broccoli), then quick veg (peppers, snap peas), tossing constantly ~3–4 min.',
       'Pour in the sauce, toss to glaze ~1 min, finish with scallion greens, and serve over rice.',
     ],
-    groveNote:
+    areaNote:
       'The grill-top wok is the advanced griller’s secret weapon — high sides plus live fire beat any home burner. Mise en place is everything; have it ALL ready before the wok goes on.',
     safety: 'Shrimp: opaque and pink. Chicken: 165°F.',
-    source: 'A live-fire technique for the grove.',
+    source: 'A live-fire technique for the picnic area.',
   },
   {
     slug: 'spatchcock-chicken',
@@ -922,10 +922,10 @@ export const recipes: Recipe[] = [
       'For the last few minutes, slide it skin-side down over the coals to crisp the skin — watch for flare-ups.',
       'Rest 10 min, squeeze lemon over, and cut into pieces.',
     ],
-    groveNote:
+    areaNote:
       'Spatchcocking is the trick to a whole bird on charcoal — flat means even cooking. Cook it indirect (away from the coals) or the skin burns before the inside is done.',
     safety: 'Chicken: breast 165°F, thighs juiciest ~175°F.',
-    source: 'A whole-bird technique for the grove.',
+    source: 'A whole-bird technique for the picnic area.',
   },
   {
     slug: 'reverse-sear-ribeye',
@@ -959,10 +959,10 @@ export const recipes: Recipe[] = [
       'Sear over the hot zone ~1 min per side (and roll it to sear the edges) until a deep crust forms and the center reaches ~125°F for medium-rare.',
       'Rest 5–10 min, top with compound butter, and slice against the grain.',
     ],
-    groveNote:
+    areaNote:
       'Reverse sear = gentle cook first, hard sear last. It’s the most reliable way to nail a thick steak on charcoal — no gray band, all crust.',
     safety: 'USDA medium for beef is 145°F; 125°F is a chef’s medium-rare — your call.',
-    source: 'A steakhouse technique for the grove.',
+    source: 'A steakhouse technique for the picnic area.',
   },
   {
     slug: 'grilled-pizza',
@@ -998,7 +998,7 @@ export const recipes: Recipe[] = [
       'Slide to the COOLER zone, cover with a dome (or loose foil), and cook ~3–5 min until the cheese melts and the bottom crisps.',
       'Finish with fresh basil and a drizzle of olive oil; slice and serve.',
     ],
-    groveNote:
+    areaNote:
       'Keep toppings light or the crust burns before they cook. A cover/dome melts the cheese without flipping. Have everything ready — grilled pizza is fast.',
     source: 'A wood-oven trick, done on charcoal.',
   },
@@ -1037,9 +1037,9 @@ export const recipes: Recipe[] = [
       'Flip once with a fish spatula; cook 4–6 min more to 145°F. (A whole fish runs longer — about 10–12 min per side.)',
       'Rest a couple minutes and serve with lemon.',
     ],
-    groveNote: 'Striped bass has firm flesh that grills better than most fish — great for learning whole fish. Oil the grate and don’t rush the flip.',
+    areaNote: 'Striped bass has firm flesh that grills better than most fish — great for learning whole fish. Oil the grate and don’t rush the flip.',
     safety: 'Fish: 145°F. Check current NJ striped bass size & season limits before keeping one.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
   {
     slug: 'grilled-bluefish',
@@ -1076,9 +1076,9 @@ export const recipes: Recipe[] = [
       'Flip once with a fish spatula; cook 2–4 min more to 145°F.',
       'Squeeze lemon over and scatter with parsley.',
     ],
-    groveNote: 'Bluefish’s strong flavor mellows with acid — be generous with the lemon. Grill it the SAME DAY it’s caught for the best taste.',
+    areaNote: 'Bluefish’s strong flavor mellows with acid — be generous with the lemon. Grill it the SAME DAY it’s caught for the best taste.',
     safety: 'Fish: 145°F. Bleed and ice bluefish right away — it doesn’t keep like leaner fish.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
   {
     slug: 'grilled-fluke',
@@ -1114,9 +1114,9 @@ export const recipes: Recipe[] = [
       'Set over the medium zone ~10–12 min, until the fluke is opaque and flakes (145°F).',
       'Open carefully — watch the steam — and serve right from the foil with the buttery juices.',
     ],
-    groveNote: 'Fluke is delicate and lean — a foil boat keeps it from sticking, falling apart, or drying out. Don’t overcook it.',
+    areaNote: 'Fluke is delicate and lean — a foil boat keeps it from sticking, falling apart, or drying out. Don’t overcook it.',
     safety: 'Fish: 145°F (flakes easily). Check NJ fluke size & season limits.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
   {
     slug: 'grilled-clams',
@@ -1153,9 +1153,9 @@ export const recipes: Recipe[] = [
       'In 5–8 min they’ll POP open in their own juice — pull each one as it opens, and discard any that stay shut.',
       'Dunk in the garlic butter or pour it over, scatter with parsley, and serve with crusty bread to mop the juices.',
     ],
-    groveNote: 'Grilled clams are the perfect beginner seafood — the grill does the work and they tell you when they’re done by opening.',
+    areaNote: 'Grilled clams are the perfect beginner seafood — the grill does the work and they tell you when they’re done by opening.',
     safety: 'Use live, tightly-closed clams; discard any that don’t open after cooking.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
   {
     slug: 'grilled-blue-crabs',
@@ -1191,9 +1191,9 @@ export const recipes: Recipe[] = [
       'Grill cut-side down over a medium-hot zone ~3–4 min, brushing with more butter, until the edges char and they’re hot through.',
       'Pile them high, pour over the remaining butter, and finish with parsley and lemon. Bring napkins.',
     ],
-    groveNote: 'Steam-then-grill is the move — steaming cooks them through and firms the meat; the grill adds the smoke and char. Pure Jersey Shore.',
+    areaNote: 'Steam-then-grill is the move — steaming cooks them through and firms the meat; the grill adds the smoke and char. Pure Jersey Shore.',
     safety: 'Steam live crabs until bright red and fully cooked; keep them cold until cook time.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
 
   // ---- More to grill ----
@@ -1204,7 +1204,7 @@ export const recipes: Recipe[] = [
     season: 'Summer',
     tagline: 'The Jersey street-fair classic',
     summary:
-      'Sweet or hot Italian sausage charred over the coals with sweet peppers and onions — the smell of every Jersey street fair, made at the grove.',
+      'Sweet or hot Italian sausage charred over the coals with sweet peppers and onions — the smell of every Jersey street fair, made at the picnic area.',
     difficulty: 'Beginner',
     tools: ['Chimney starter', 'Long tongs', 'Cast-iron pan or foil tray'],
     prepTime: '10 min',
@@ -1229,9 +1229,9 @@ export const recipes: Recipe[] = [
       'Meanwhile, grill the sausages over the medium zone, turning, until browned and 160°F inside, ~12–15 min. Slide to the cool zone if they flare.',
       'Pile the sausage and peppers into rolls.',
     ],
-    groveNote: 'Start the peppers first — they take longer than the sausage. A foil tray keeps them from falling through the grate.',
+    areaNote: 'Start the peppers first — they take longer than the sausage. A foil tray keeps them from falling through the grate.',
     safety: 'Pork sausage: 160°F.',
-    source: 'A Jersey street-fair staple for the grove.',
+    source: 'A Jersey street-fair staple for the picnic area.',
   },
   {
     slug: 'flank-steak-chimichurri',
@@ -1268,9 +1268,9 @@ export const recipes: Recipe[] = [
       'Rest 8–10 min (important for flank), then slice THIN against the grain.',
       'Spoon chimichurri over the slices.',
     ],
-    groveNote: 'Two rules for flank: don’t cook past medium-rare, and slice thin against the grain — that’s what keeps it tender.',
+    areaNote: 'Two rules for flank: don’t cook past medium-rare, and slice thin against the grain — that’s what keeps it tender.',
     safety: 'Beef: USDA 145°F; 130°F is a chef’s medium-rare.',
-    source: 'A crowd-feeding cut for the grove.',
+    source: 'A crowd-feeding cut for the picnic area.',
   },
   {
     slug: 'grilled-chicken-wings',
@@ -1279,7 +1279,7 @@ export const recipes: Recipe[] = [
     season: 'Summer',
     tagline: 'Crispy, smoky, toss-and-go',
     summary:
-      'Wings grilled over a two-zone fire until the skin is crackly and smoky, then tossed in the sauce of your choice — the ultimate hands-on grove snack.',
+      'Wings grilled over a two-zone fire until the skin is crackly and smoky, then tossed in the sauce of your choice — the ultimate hands-on picnic-area snack.',
     difficulty: 'Beginner',
     tools: ['Chimney starter', 'Long tongs', 'Instant-read thermometer', 'Large bowl (for tossing)'],
     prepTime: '10 min',
@@ -1304,9 +1304,9 @@ export const recipes: Recipe[] = [
       'Move them over the hot zone to crisp and char, ~5–10 min, watching for flare-ups.',
       'Pull at 175°F+ (wings are best well-done), then toss hot in your sauce.',
     ],
-    groveNote: 'Render on the cool side first, crisp on the hot side last — rushing wings over direct heat just burns the skin while the inside is raw.',
+    areaNote: 'Render on the cool side first, crisp on the hot side last — rushing wings over direct heat just burns the skin while the inside is raw.',
     safety: 'Chicken: 165°F minimum; wings are best at 175–180°F.',
-    source: 'The classic grove snack.',
+    source: 'The classic picnic-area snack.',
   },
   {
     slug: 'grilled-shrimp-skewers',
@@ -1340,9 +1340,9 @@ export const recipes: Recipe[] = [
       'Build a hot fire. Grill the skewers over direct heat ~2 min per side, until the shrimp are pink and opaque — they cook fast, so don’t walk away.',
       'Squeeze lemon over, scatter parsley, and serve right off the skewer.',
     ],
-    groveNote: 'Shrimp go from perfect to rubbery in seconds — pull them the moment they curl and turn opaque. Metal skewers beat wood (no soaking, no burning).',
+    areaNote: 'Shrimp go from perfect to rubbery in seconds — pull them the moment they curl and turn opaque. Metal skewers beat wood (no soaking, no burning).',
     safety: 'Shrimp: opaque and firm (~120°F).',
-    source: 'A fast grove appetizer.',
+    source: 'A fast picnic-area appetizer.',
   },
 
   // ---- More Local Catch (Jersey Shore) ----
@@ -1379,9 +1379,9 @@ export const recipes: Recipe[] = [
       'Grill over the medium zone ~8–9 min per side, flipping once with a fish spatula, until the skin crisps and the flesh flakes (145°F).',
       'Rest a couple minutes and serve with more lemon.',
     ],
-    groveNote: 'Whole fish is more forgiving than fillets — the bones and skin protect the flesh. Score the skin and oil the grate so it releases clean.',
+    areaNote: 'Whole fish is more forgiving than fillets — the bones and skin protect the flesh. Score the skin and oil the grate so it releases clean.',
     safety: 'Fish: 145°F. Check NJ black sea bass size & season limits.',
-    source: 'A Jersey Shore local catch — grove-grilled.',
+    source: 'A Jersey Shore local catch — grilled here.',
   },
   {
     slug: 'soft-shell-crabs',
@@ -1417,9 +1417,9 @@ export const recipes: Recipe[] = [
       'Grill the crabs over a hot direct zone, top-shell down first, ~3–4 min per side, until crisp and bright red. They can pop and spatter — stand back.',
       'Brush with the lemon-garlic butter, finish with parsley, and serve with lemon wedges.',
     ],
-    groveNote: 'Soft-shells are a short-season treat — grab them when you see them. Pat them bone-dry so they crisp instead of steam, and watch for spatter.',
+    areaNote: 'Soft-shells are a short-season treat — grab them when you see them. Pat them bone-dry so they crisp instead of steam, and watch for spatter.',
     safety: 'Cook until bright red and hot through. Keep them very cold until cook time.',
-    source: 'A Jersey Shore local delicacy — grove-grilled.',
+    source: 'A Jersey Shore local delicacy — grilled here.',
   },
 
   // ---- More Veggies & Sides ----
@@ -1454,8 +1454,8 @@ export const recipes: Recipe[] = [
       'Grill, rolling now and then, ~5–8 min until charred in spots and just tender.',
       'Squeeze lemon over and shower with Parmesan if you like.',
     ],
-    groveNote: 'Lay the spears across the bars so they don’t drop into the coals — or use a grill basket. Thicker spears grill better than pencil-thin ones.',
-    source: 'A fresh spring side for the grove.',
+    areaNote: 'Lay the spears across the bars so they don’t drop into the coals — or use a grill basket. Thicker spears grill better than pencil-thin ones.',
+    source: 'A fresh spring side for the picnic area.',
   },
   {
     slug: 'foil-grilled-potatoes',
@@ -1489,7 +1489,7 @@ export const recipes: Recipe[] = [
       'Set over the hot zone ~25–30 min, flipping once, until tender when pierced.',
       'Open carefully (steam!), and tip onto a platter.',
     ],
-    groveNote: 'Double-wrap so they don’t tear, and give them a head start before the main — potatoes take longer than most things on the grill.',
+    areaNote: 'Double-wrap so they don’t tear, and give them a head start before the main — potatoes take longer than most things on the grill.',
     source: 'The everything-goes-with-it side.',
   },
 
@@ -1501,7 +1501,7 @@ export const recipes: Recipe[] = [
     season: 'Summer',
     tagline: 'Caramelized & jammy',
     summary:
-      'Ripe summer peaches halved and grilled until caramelized and jammy, then topped with vanilla ice cream — the easiest showstopper dessert at the grove.',
+      'Ripe summer peaches halved and grilled until caramelized and jammy, then topped with vanilla ice cream — the easiest showstopper dessert at the picnic area.',
     difficulty: 'Beginner',
     tools: ['Chimney starter', 'Long tongs'],
     prepTime: '5 min',
@@ -1525,8 +1525,8 @@ export const recipes: Recipe[] = [
       'Flip and grill the skin side ~2–3 min more.',
       'Serve warm, cut-side up, with a scoop of vanilla ice cream melting into the center.',
     ],
-    groveNote: 'Use firm-ripe peaches — too soft and they fall apart on the grate. Cook these on the leftover heat after dinner.',
-    source: 'A summer grove dessert.',
+    areaNote: 'Use firm-ripe peaches — too soft and they fall apart on the grate. Cook these on the leftover heat after dinner.',
+    source: 'A summer picnic-area dessert.',
   },
   {
     slug: 'grilled-pineapple',
@@ -1558,8 +1558,8 @@ export const recipes: Recipe[] = [
       'Grill over medium-hot direct heat ~3–4 min per side, until deeply caramelized with dark grill marks.',
       'Squeeze lime over and serve — on its own, with ice cream, or alongside grilled pork or chicken.',
     ],
-    groveNote: 'The natural sugar does the work — just let the rings sit long enough to caramelize before flipping. Doubles as a sweet side for pork.',
-    source: 'A tropical grove sweet.',
+    areaNote: 'The natural sugar does the work — just let the rings sit long enough to caramelize before flipping. Doubles as a sweet side for pork.',
+    source: 'A tropical picnic-area sweet.',
   },
 ]
 
@@ -1673,7 +1673,7 @@ export const tools: Tool[] = [
     name: 'Sharp Knife & Cutting Board',
     emoji: '🔪',
     essential: false,
-    what: 'Slice against the grain, portion fish, and prep right at the grove. Bring a small board and a sharp knife.',
+    what: 'Slice against the grain, portion fish, and prep right at the picnic area. Bring a small board and a sharp knife.',
   },
 ]
 

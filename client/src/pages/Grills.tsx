@@ -8,7 +8,7 @@ export default function Grills() {
       <SectionHeading
         eyebrow="Our Equipment"
         title="Meet our grills: the Kay Park SF163.5"
-        subtitle="These aren't backyard hardware-store grills — they're the same heavy-gauge, commercial park grills you'll find in state and national parks, built to be lit thousands of times by thousands of hands. Here's exactly what we put in the grove."
+        subtitle="These aren't backyard hardware-store grills — they're the same heavy-gauge, commercial park grills you'll find in state and national parks, built to be lit thousands of times by thousands of hands. Here's exactly what we put in the picnic area."
       />
 
       <div className="grid gap-10 sm:grid-cols-[1fr_0.85fr] items-start">
@@ -63,7 +63,7 @@ export default function Grills() {
       <div className="mt-16">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <p className="uppercase tracking-[0.1em] text-xs font-semibold text-seafoam mb-2">Photos</p>
-          <h3 className="text-2xl text-navy-dark">A look at the grove</h3>
+          <h3 className="text-2xl text-navy-dark">A look at the picnic area</h3>
           <p className="mt-2 text-muted">Photos coming soon — here’s the shot list we’ll capture at the grills.</p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

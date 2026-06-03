@@ -1,7 +1,7 @@
 # Wharfside Manor Picnic Area Website Content & Experience Specification
 
 ## 1. Project Overview
-- **Client / Community:** Wharfside Manor Condominiums, Monmouth Beach, New Jersey – 11 shared Kay Park-Rec SF163.5 pedestal charcoal grills installed permanently in the waterfront picnic grove.
+- **Client / Community:** Wharfside Manor Condominiums, Monmouth Beach, New Jersey – 11 shared Kay Park-Rec SF163.5 pedestal charcoal grills installed permanently in the waterfront picnic area.
 - **Primary Objective:** Provide residents and approved guests with a centralized, mobile-friendly website that communicates rules, showcases seasonal recipes, and delivers multimedia how-tos tailored to the community's amenities.
 - **Secondary Objectives:**
   - Reinforce HOA policies, safety compliance, and maintenance expectations.
@@ -30,7 +30,7 @@
 | How-To Guides | Instructional hub | Cards for each tutorial with difficulty tags (Beginner/Intermediate/Advanced), video embed, transcript, printable checklist | Focus on Kay Park SF163.5 operation, chimney starting, lighter-fluid procedure, instant-light briquettes, coastal wind management, sanitation, picnic planning, food safety |
 | Recipes | Seasonal library (Spring, Summer, Fall) | Filter by season, course, dietary tags, crowd size. Each recipe page uses standardized template (see §5). Include printable option and video embed. | Highlight local ingredients (Jersey tomatoes, seafood, ramps) and multi-course feast itineraries. |
 | Community Stories & Events | Foster engagement | Blog feed (resident submissions), photo galleries, event calendar with RSVP links, volunteer opportunities | Provide moderation workflow and submission guidelines. |
-| About Wharfside | Community overview | Condo history, amenities (pool, docks, picnic grove), map, parking info, FAQs | Link to condo association resources. |
+| About Wharfside | Community overview | Condo history, amenities (pool, docks, picnic area), map, parking info, FAQs | Link to condo association resources. |
 | Contact & Reservations | Communication hub | Contact form (name, unit, phone, email), grill reservation request form, emergency numbers, downloadable forms | Outline approval process, usage limits, and acknowledgement checkbox for rules compliance. |
 
 ## 4. Content Governance
@@ -97,7 +97,7 @@
 - **Branding:** Lower-third graphics with Wharfside colors, icon set for safety tips, watermark logo in corner.
 
 ### 6.3 Example Storyboard – "Communal Grill Prep & Lighting"
-1. **Scene 1 (0:00–0:10):** Wide shot of picnic grove; narrator intro overlay.
+1. **Scene 1 (0:00–0:10):** Wide shot of picnic area; narrator intro overlay.
 2. **Scene 2 (0:10–0:35):** Inspecting grill hardware; close-ups of grate slots and rotation lock.
 3. **Scene 3 (0:35–1:30):** Split-screen of chimney method vs lighter-fluid method; safety callouts.
 4. **Scene 4 (1:30–2:10):** Demonstrate coal layouts (direct, two-zone) with animated overlays.
@@ -116,7 +116,7 @@
 ## 8. Forms & Downloadables
 - Grill Reservation Form (HTML + printable PDF) with fields: resident name, unit, date/time, guest count, acknowledgment of rules, signature.
 - Quick-Start Cards: chimney lighting, lighter-fluid lighting, instant-light briquettes, ash disposal.
-- Safety Signage: "Maintain 10 ft Clearance," "No Alcohol in Picnic Grove," "Pets on Leash," "Dispose Ashes in Metal Bins."
+- Safety Signage: "Maintain 10 ft Clearance," "No Alcohol in picnic area," "Pets on Leash," "Dispose Ashes in Metal Bins."
 - Temperature Reference Sheet: USDA safe minimums for beef, pork, poultry, seafood.
 - Seasonal Shopping Lists aligned to feature menus.
 

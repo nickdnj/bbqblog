@@ -1,6 +1,6 @@
 # Wharfside Picnic Guide
 
-A single-page website that serves as the digital home for Wharfside Manor's picnic grove and eleven Kay Park SF163.5 pedestal
+A single-page website that serves as the digital home for Wharfside Manor's picnic area and eleven Kay Park SF163.5 pedestal
 charcoal grills. The page packages community rules, how-to tutorials, seasonal menu plans, and reservation workflows so
 residents can host safe, memorable events on the Jersey Shore waterfront.
 

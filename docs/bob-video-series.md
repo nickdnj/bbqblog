@@ -1,26 +1,26 @@
 # Bob's Grill School — Video Series Production Plan
 
 Short, friendly how-to videos that teach a complete charcoal beginner to grill at the
-Wharfside Manor picnic grove. **Bob is the on-camera host;** Nick produces/shoots (behind the
+Wharfside Manor picnic area. **Bob is the on-camera host;** Nick produces/shoots (behind the
 camera). The series is the moving-picture version of the site's "Start Here" 6-step path.
 
 ## Why this series
 
 A resident literally walked up and asked Bob and Nick, *"How do we grill here?"* Most residents
-have only ever used a gas grill at home; the grove's grills are public-park **charcoal**. Video
+have only ever used a gas grill at home; the picnic area's grills are public-park **charcoal**. Video
 removes the last bit of intimidation — you watch a neighbor do it once, then you can do it.
 
 ## Audience & tone
 - **Audience:** adults, zero charcoal experience, possibly nervous about open fire.
 - **Tone:** warm, neighborly, encouraging. "If I can do it, you can do it." No jargon; when a term
   is unavoidable (e.g. "two-zone fire"), Bob defines it on screen.
-- **Bob is the trusted neighbor, not a TV chef.** Real grove, real grills, real weather.
+- **Bob is the trusted neighbor, not a TV chef.** Real picnic area, real grills, real weather.
 
 ## Format (keep it tight)
 - **Length:** 60–120 seconds each. These are how-tos, not entertainment — respect the viewer's time.
 - **Orientation:** shoot **horizontal 1080p** for the website embeds. Also grab **vertical 9:16**
   takes of the single best moment in each episode for Shorts/Reels (see Distribution).
-- **Location:** the picnic grove, at a real SF163.5 grill. Golden hour looks best; avoid harsh noon.
+- **Location:** the picnic area, at a real SF163.5 grill. Golden hour looks best; avoid harsh noon.
 - **Audio:** lav mic on Bob (wind off the river will wreck on-camera mic audio). Grab ambient
   shore/gull sound separately for the bed.
 - **Branding:** open with the wave mark + "Bob's Grill School," lower-third with the episode title,
