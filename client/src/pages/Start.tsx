@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Section, SectionHeading } from '../components/ui'
 import { steps } from '../data/content'
+import InstallGuide from '../components/InstallGuide'
 
 export default function Start() {
   return (
@@ -10,6 +11,8 @@ export default function Start() {
         title="Your first cookout, in 6 simple steps"
         subtitle="Charcoal isn't hard — it's just different from the gas grill at home. Follow these six steps and you'll be the one showing the next neighbor how it's done."
       />
+
+      <InstallGuide />
 
       <div className="flex gap-4 items-start max-w-3xl mx-auto mb-12 bg-white border border-navy/10 border-l-4 border-l-seafoam rounded-xl p-5 shadow-[var(--shadow-soft)] text-slate">
         <span className="text-2xl leading-none" aria-hidden>🔥</span>
