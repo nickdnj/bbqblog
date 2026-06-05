@@ -16,7 +16,9 @@ MINIPC="${MINIPC:-nickd@100.108.181.24}"   # Tailscale IP — LAN IP is unreacha
 DEST="${DEST:-~/bbqblog}"
 
 echo "→ Syncing app source to ${MINIPC}:${DEST}"
-rsync -az \
+# --delete so files removed locally (e.g. deleted pages) don't linger on the mini PC
+# and break the in-image build. Excluded paths below are protected from deletion.
+rsync -az --delete \
   --exclude='.git' \
   --exclude='node_modules' \
   --exclude='dist' \
