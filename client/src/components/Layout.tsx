@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { HOA_PHONE } from '../data/content'
+import { ECI_PHONE } from '../data/content'
 
 const navLinks = [
   { to: '/start', label: 'Start Here' },
@@ -78,9 +78,9 @@ export default function Layout() {
           <div>
             <h2 className="text-white font-display text-lg">Stay connected</h2>
             <p className="mt-2 text-sm">
-              Wharfside Manor Condominium Association · Monmouth Beach, NJ · HOA Office {HOA_PHONE}
+              Wharfside Manor Condominium Association · Monmouth Beach, NJ · Property Management (ECI) {ECI_PHONE}
             </p>
-            <p className="mt-2 text-sm font-semibold">Emergency: Dial 911 first, then contact the HOA office.</p>
+            <p className="mt-2 text-sm font-semibold">Emergency: Dial 911 first, then contact Property Management (ECI).</p>
           </div>
           <div>
             <h3 className="text-white font-display">Quick links</h3>

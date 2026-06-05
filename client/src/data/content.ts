@@ -1,7 +1,8 @@
 // Structured Picnic Guide content — single source of truth for the static pages.
 // (Blog posts come from the API; this is the fixed guide material.)
 
-export const HOA_PHONE = '(732) 245-4057'
+// Property management contact — matches the Monthly Bulletin (ECI).
+export const ECI_PHONE = '732-970-6886'
 
 export const quickFacts = [
   '11 fixed Kay Park SF163.5 charcoal grills',
@@ -283,7 +284,7 @@ export const rules: RuleCard[] = [
   {
     title: 'Emergency plan',
     items: [
-      `Dial 911 for emergencies, then notify the HOA office at ${HOA_PHONE}.`,
+      `Dial 911 for emergencies, then notify Property Management (ECI) at ${ECI_PHONE}.`,
       'Fire extinguishers and first-aid kits are stored in the pool house lobby.',
       'Know the location of ash bins, sand buckets, and hose bibs before lighting.',
       'Complete an incident report within 24 hours for any injury or equipment issue.',
